@@ -1,0 +1,726 @@
+estado,municipio,clave_inegi,declaratoria_emergencia_ordinaria,declaratoria_emergencia_extraordinaria,declaratoria_desastre,magniud_sismo,fecha_evento
+Chiapas,Acacoyagua,7001,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Acala,7002,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Acapetahua,7003,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Altamirano,7004,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Amatán,7005,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Amatenango de la Frontera,7006,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Amatenango del Valle,7007,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Angel Albino Corzo,7008,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Arriaga,7009,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Bejucal de Ocampo,7010,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Bella Vista,7011,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Berriozábal,7012,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Bochil,7013,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,El Bosque,7014,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Cacahoatán,7015,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Catazajá,7016,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Cintalapa,7017,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Coapilla,7018,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Comitán de Domínguez,7019,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,La Concordia,7020,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Copainalá,7021,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chalchihuitán,7022,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chamula,7023,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chanal,7024,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chapultenango,7025,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Chenalhó,7026,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chiapa de Corzo,7027,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chiapilla,7028,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chicoasén,7029,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chicomuselo,7030,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Chilón,7031,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Escuintla,7032,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Francisco León,7033,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Frontera Comalapa,7034,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Frontera Hidalgo,7035,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,La Grandeza,7036,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Huehuetán,7037,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Huixtán,7038,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Huitiupán,7039,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Huixtla,7040,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,La Independencia,7041,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ixhuatán,7042,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Ixtacomitán,7043,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Ixtapa,7044,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ixtapangajoya,7045,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Jiquipilas,7046,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Jitotol,7047,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Juárez,7048,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Larráinzar,7049,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,La Libertad,7050,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Mapastepec,7051,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Las Margaritas,7052,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Mazapa de Madero,7053,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Mazatán,7054,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Metapa,7055,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Mitontic,7056,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Motozintla,7057,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Nicolás Ruíz,7058,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ocosingo,7059,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ocotepec,7060,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ocozocoautla de Espinosa,7061,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Ostuacán,7062,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Osumacinta,7063,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Oxchuc,7064,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Palenque,7065,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Pantelhó,7066,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Pantepec,7067,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Pichucalco,7068,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Pijijiapan,7069,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,El Porvenir,7070,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Villa Comaltitlán,7071,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Pueblo Nuevo Solistahuacán,7072,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Rayón,7073,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Reforma,7074,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Las Rosas,7075,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Sabanilla,7076,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Salto de Agua,7077,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,San Cristóbal de las Casas,7078,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,San Fernando,7079,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Siltepec,7080,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Simojovel,7081,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Sitalá,7082,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Socoltenango,7083,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Solosuchiapa,7084,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Soyaló,7085,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Suchiapa,7086,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Suchiate,7087,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Sunuapa,7088,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Tapachula,7089,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tapalapa,7090,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tapilula,7091,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Tecpatán,7092,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tenejapa,7093,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Teopisca,7094,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tila,7096,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Tonalá,7097,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Totolapa,7098,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,La Trinitaria,7099,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tumbalá,7100,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Tuxtla Gutiérrez,7101,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tuxtla Chico,7102,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tuzantán,7103,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Tzimol,7104,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Unión Juárez,7105,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Venustiano Carranza,7106,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Villa Corzo,7107,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Villaflores,7108,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Yajalón,7109,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,San Lucas,7110,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Zinacantán,7111,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,San Juan Cancuc,7112,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Aldama,7113,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Benemérito de las Américas,7114,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Maravilla Tenejapa,7115,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Marqués de Comillas,7116,no aplica,sí,no aplica,8.2,2017-09-07
+Chiapas,Montecristo de Guerrero,7117,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,San Andrés Duraznal,7118,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Santiago el Pinar,7119,no aplica,sí,sí,8.2,2017-09-07
+Chiapas,Emiliano Zapata,7121,no aplica,no aplica,sí,8.2,2017-09-07
+Chiapas,El Parral,7122,no aplica,no aplica,sí,8.2,2017-09-07
+Chiapas,Mezcalapa,7123,no aplica,no aplica,sí,8.2,2017-09-07
+CIudad de México,Azcapotzalco,9002,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Coyoacán,9003,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Cuajimalpa de Morelos,9004,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Gustavo A. Madero,9005,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Iztacalco,9006,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Iztapalapa,9007,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,La Magdalena Contreras,9008,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Milpa Alta,9009,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Álvaro Obregón,9010,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Tláhuac,9011,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Tlalpan,9012,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Xochimilco,9013,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Benito Juárez,9014,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Cuauhtémoc,9015,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Miguel Hidalgo,9016,no aplica,sí,sí,7.1,2017-09-19
+CIudad de México,Venustiano Carranza,9017,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Ahuacuotzingo,12002,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Alcozauca de Guerrero,12004,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Alpoyeca,12005,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Atenango del Río,12008,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Buenavista de Cuéllar,12015,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Copalillo,12019,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Cualác,12024,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Huamuxtitlán,12033,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Huitzuco de los Figueroa,12034,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Iguala de la Independencia,12035,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Mártir de Cuilapan,12042,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Olinalá,12045,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Pilcaya,12049,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Taxco de Alarcón,12055,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Tepecoacuilco de Trujano,12059,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Tetipac,12060,no aplica,sí,sí,7.1,2017-09-19
+Guerrero,Tlalixtaquilla de Maldonado,12065,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Tlapa de Comonfort,12066,no aplica,no aplica,sí,7.1,2017-09-19
+Guerrero,Xochihuehuetlán,12070,no aplica,no aplica,sí,7.1,2017-09-19
+México,Amecameca,15009,no aplica,no aplica,sí,7.1,2017-09-19
+México,Atlautla,15015,no aplica,no aplica,sí,7.1,2017-09-19
+México,Ecatzingo,15034,no aplica,no aplica,sí,7.1,2017-09-19
+México,Joquicingo,15049,no aplica,no aplica,sí,7.1,2017-09-19
+México,Malinalco,15052,no aplica,no aplica,sí,7.1,2017-09-19
+México,Nezahualcóyotl,15058,no aplica,no aplica,sí,7.1,2017-09-19
+México,Ocuilan,15063,no aplica,no aplica,sí,7.1,2017-09-19
+México,Tenancingo,15088,no aplica,no aplica,sí,7.1,2017-09-19
+México,Tepetlixpa,15094,no aplica,no aplica,sí,7.1,2017-09-19
+México,Tianguistenco,15101,no aplica,no aplica,sí,7.1,2017-09-19
+México,Villa Guerrero,15113,no aplica,no aplica,sí,7.1,2017-09-19
+México,Zumpahuacán,15119,no aplica,no aplica,sí,7.1,2017-09-19
+Morelos,Amacuzac,17001,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Atlatlahucan,17002,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Axochiapan,17003,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Ayala,17004,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Coatlán del Río,17005,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Cuautla,17006,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Cuernavaca,17007,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Emiliano Zapata,17008,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Huitzilac,17009,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Jantetelco,17010,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Jiutepec,17011,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Jojutla,17012,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Jonacatepec,17013,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Mazatepec,17014,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Miacatlán,17015,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Ocuituco,17016,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Puente de Ixtla,17017,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Temixco,17018,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tepalcingo,17019,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tepoztlán,17020,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tetecala,17021,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tetela del Volcán,17022,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tlalnepantla,17023,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tlaltizapán,17024,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tlaquiltenango,17025,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Tlayacapan,17026,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Totolapan,17027,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Xochitepec,17028,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Yautepec,17029,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Yecapixtla,17030,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Zacatepec,17031,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Zacualpan,17032,no aplica,sí,sí,7.1,2017-09-19
+Morelos,Temoac,17033,no aplica,sí,sí,7.1,2017-09-19
+Oaxaca,Asunción Cacalotepec,20003,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Asunción Cuyotepeji,20004,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Asunción Ixtaltepec,20005,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Asunción Ocotlán,20007,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Asunción Tlacolulita,20008,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,El Barrio de la Soledad,20010,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Calihualá,20011,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Candelaria Loxicha,20012,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ciénega de Zimatlán,20013,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ciudad Ixtepec,20014,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Coatecas Altas,20015,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,La Compañía,20017,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Concepción Buenavista,20018,sí,no aplica,no aplica,7.1,2017-09-19
+Oaxaca,Cosoltepec,20022,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Cuilápam de Guerrero,20023,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Chahuites,20025,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Heroica Ciudad de Ejutla de Crespo,20028,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,El Espinal,20030,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Tamazulapam del Espíritu Santo,20031,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Fresnillo de Trujano,20032,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Guadalupe Etla,20033,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Guadalupe de Ramírez,20034,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Guelatao de Juárez,20035,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Guevea de Humboldt,20036,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Villa Hidalgo,20038,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Heroica Ciudad de Huajuapan de León,20039,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Ixtlán de Juárez,20042,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Heroica Ciudad de Juchitán de Zaragoza,20043,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa Magdalena Jicotlán,20047,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Magdalena Mixtepec,20048,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Magdalena Ocotlán,20049,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Magdalena Teitipac,20051,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Magdalena Tequisistlán,20052,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Magdalena Tlacotepec,20053,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Mariscala de Juárez,20055,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Matías Romero Avendaño,20057,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Miahuatlán de Porfirio Díaz,20059,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Mixistlán de la Reforma,20060,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Monjas,20061,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Natividad,20062,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Nejapa de Madero,20064,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ixpantepec Nieves,20065,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Niltepec,20066,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Oaxaca de Juárez,20067,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ocotlán de Morelos,20068,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,La Pe,20069,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Pluma Hidalgo,20071,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San José del Progreso,20072,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Quioquitani,20074,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Reforma de Pineda,20075,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Rojas de Cuauhtémoc,20078,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Salina Cruz,20079,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Agustín Amatengo,20080,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Agustín Atenango,20081,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Agustín de las Juntas,20083,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Agustín Etla,20084,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Agustín Loxicha,20085,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Agustín Yatareni,20087,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Dinicuiti,20089,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Andrés Huayápam,20091,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Ixtlahuaca,20092,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Lagunas,20093,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Andrés Paxtlán,20095,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Solaga,20097,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Tepetlapa,20099,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Andrés Yaá,20100,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Andrés Zabache,20101,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Antonino Castillo Velasco,20103,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Antonino el Alto,20104,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Antonino Monte Verde,20105,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Antonio Acutla,20106,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Antonio de la Cal,20107,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Baltazar Chichicápam,20112,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Baltazar Loxicha,20113,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Baltazar Yatzachi el Bajo,20114,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bartolo Coyotepec,20115,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bartolomé Loxicha,20117,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bartolomé Quialana,20118,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bartolomé Zoogocho,20120,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bartolo Yautepec,20122,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Bernardo Mixtepec,20123,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Blas Atempa,20124,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Carlos Yautepec,20125,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Cristóbal Amatlán,20126,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Cristóbal Lachirioag,20128,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Cristóbal Suchixtlahuaca,20129,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Dionisio del Mar,20130,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Dionisio Ocotepec,20131,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Dionisio Ocotlán,20132,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Felipe Tejalápam,20135,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco Cajonos,20138,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco del Mar,20141,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Francisco Ixhuatán,20143,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Francisco Lachigoló,20145,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco Logueche,20146,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco Ozolotepec,20148,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco Sola,20149,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Francisco Teopan,20151,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Francisco Tlapancingo,20152,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Gabriel Mixtepec,20153,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Ildefonso Amatlán,20154,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Ildefonso Sola,20155,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Ildefonso Villa Alta,20156,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Jacinto Amilpas,20157,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Jerónimo Coatlán,20159,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Jerónimo Silacayoapilla,20160,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Jerónimo Taviche,20162,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Jorge Nuchita,20164,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San José Ayuquila,20165,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San José del Peñasco,20167,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San José Lachiguiri,20170,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ánimas Trujano,20174,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Bautista Suchitepec,20181,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Bautista Tlachichilco,20183,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Bautista Tuxtepec,20184,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Cacahuatepec,20185,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Cieneguilla,20186,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Comaltepec,20189,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Cotzocón,20190,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Chicomezúchil,20191,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Chilateca,20192,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan del Río,20194,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Guelavía,20197,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Guichicovi,20198,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Juan Ihualtepec,20199,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Juquila Mixes,20200,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Juquila Vijanos,20201,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Lachao,20202,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Lachigalla,20203,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Lajarcia,20204,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Lalana,20205,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Mazatlán,20207,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Mixtepec - Distrito 08 -,20208,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Mixtepec - Distrito 26 -,20209,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Ñumí,20210,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Juan Ozolotepec,20211,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Petlapa,20212,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Quiahije,20213,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Tabaá,20216,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Teitipac,20219,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Yaeé,20222,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Juan Yatzona,20223,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Lorenzo Albarradas,20226,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Lorenzo Cacaotepec,20227,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Lorenzo Texmelucan,20229,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Lorenzo Victoria,20230,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Lucas Camotlán,20231,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Lucas Quiaviní,20233,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Luis Amatlán,20235,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Marcial Ozolotepec,20236,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Marcos Arteaga,20237,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Martín de los Cansecos,20238,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Martín Lachilá,20241,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Martín Peras,20242,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Martín Tilcajete,20243,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Martín Zacatepec,20245,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Mateo Cajonos,20246,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Capulálpam de Méndez,20247,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Mateo del Mar,20248,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Mateo Nejápam,20251,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Mateo Piñas,20253,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Mateo Río Hondo,20254,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Mateo Tlapiltepec,20256,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Melchor Betaza,20257,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Ahuehuetitlán,20259,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Miguel Amatitlán,20261,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Miguel Amatlán,20262,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Coatlán,20263,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Chimalapa,20265,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Miguel del Puerto,20266,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel del Río,20267,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Ejutla,20268,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Mixtepec,20271,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Panixtlahuaca,20272,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Peras,20273,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Piedras,20274,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Quetzaltepec,20275,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Villa Sola de Vega,20277,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Suchixtepec,20279,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Villa Talea de Castro,20280,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Tenango,20282,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Miguel Tilquiápam,20284,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Miguel Tlacotepec,20286,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Miguel Tulancingo,20287,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Miguel Yotao,20288,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Nicolás,20289,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Nicolás Hidalgo,20290,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Pablo Coatlán,20291,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pablo Cuatro Venados,20292,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pablo Etla,20293,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pablo Huixtepec,20295,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pablo Villa de Mitla,20298,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pablo Yaganiza,20299,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Apóstol,20301,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Cajonos,20303,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Comitancillo,20305,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Pedro el Alto,20306,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Huamelula,20307,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Pedro Huilotepec,20308,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Pedro Ixtlahuaca,20310,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Juchatengo,20314,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Mártir,20315,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Mártir Quiechapa,20316,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Mártir Yucuxaco,20317,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Pedro Mixtepec - Distrito 22 -,20318,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Mixtepec - Distrito 26 -,20319,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Nopala,20321,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Pedro Ocotepec,20323,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Pochutla,20324,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Quiatoni,20325,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Tapanatepec,20327,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,San Pedro Taviche,20328,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Totolápam,20333,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro Yaneri,20335,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro y San Pablo Ayutla,20337,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Pedro y San Pablo Teposcolula,20339,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Pedro y San Pablo Tequixtepec,20340,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Pedro Yucunama,20341,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Raymundo Jalpan,20342,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Sebastián Abasolo,20343,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Sebastián Coatlán,20344,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Sebastián Nicananduta,20346,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Sebastián Río Hondo,20347,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Sebastián Tecomaxtlahuaca,20348,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Sebastián Teitipac,20349,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Sebastián Tutla,20350,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Simón Almolongas,20351,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Simón Zahuatlán,20352,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa Ana,20353,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Ana del Valle,20356,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Ana Tavela,20357,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Ana Tlapacoyan,20358,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Ana Zegache,20360,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catalina Quierí,20361,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Cuixtla,20362,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Ixtepeji,20363,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Juquila,20364,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Lachatao,20365,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Loxicha,20366,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Minas,20368,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Quiané,20369,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Catarina Zapoquila,20373,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa Cruz Amilpas,20375,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Cruz de Bravo,20376,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa Cruz Mixtepec,20378,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Cruz Papalutla,20380,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Cruz Tacache de Mina,20381,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa Cruz Xitla,20384,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Cruz Xoxocotlán,20385,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Gertrudis,20387,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Inés del Monte,20388,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Inés Yatzeche,20389,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Lucía del Camino,20390,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Lucía Miahuatlán,20391,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa Lucía Ocotlán,20393,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Alotepec,20394,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Ayoquezco de Aldama,20398,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Atzompa,20399,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Camotlán,20400,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa María Colotepec,20401,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Coyotepec,20403,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Villa de Chilapa de Díaz,20405,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa María Chimalapa,20407,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María del Tule,20409,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Ecatepec,20410,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Guelacé,20411,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Guienagati,20412,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Huatulco,20413,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Jalapa del Marqués,20418,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Jaltianguis,20419,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Lachixío,20420,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Mixtequilla,20421,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Ozolotepec,20424,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Petapa,20427,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Quiegolani,20428,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Sola,20429,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Temaxcalapa,20432,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Temaxcaltepec,20433,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Tepantlali,20435,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Texcatitlán,20436,no aplica,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santa María Tlahuitoltepec,20437,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Tonameca,20439,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Totolapilla,20440,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Xadani,20441,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santa María Yalina,20442,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Yavesía,20443,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santa María Zoquitlán,20449,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Apóstol,20452,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Astata,20453,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santiago Atitlán,20454,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Ayuquililla,20455,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Cacaloxtepec,20456,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Camotlán,20457,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Chazumba,20459,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Choapam,20460,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago del Río,20461,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Huajolotitlán,20462,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Ihuitlán Plumas,20464,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Ixcuintepec,20465,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Jamiltepec,20467,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Jocotepec,20468,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Lachiguiri,20470,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santiago Lalopa,20471,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Laollaga,20472,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santiago Laxopa,20473,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Matatlán,20475,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Miltepec,20476,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Minas,20477,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Tamazola,20484,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Villa Tejúpam de la Unión,20486,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Tepetlapa,20488,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Xanica,20495,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Xiacuí,20496,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Yaitepec,20497,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Yaveo,20498,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Yucuyachi,20501,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santiago Zacatepec,20502,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santiago Zoochila,20503,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Nuevo Zoquiapam,20504,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Ingenio,20505,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Albarradas,20506,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Chihuitán,20508,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo de Morelos,20509,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Ozolotepec,20512,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Petapa,20513,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Roayaga,20514,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Tehuantepec,20515,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Teojomulco,20516,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Tepuxtepec,20517,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Tomaltepec,20519,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Tonalá,20520,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santo Domingo Xagacía,20522,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Domingo Yodohino,20524,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santo Domingo Zanatepec,20525,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Santos Reyes Nopala,20526,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santos Reyes Tepejillo,20528,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santos Reyes Yucuná,20529,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Santo Tomás Jalieza,20530,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Santo Tomás Tamazulapan,20533,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Vicente Coatlán,20534,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,San Vicente Lachixío,20535,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Silacayoápam,20537,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Sitio de Xitlapehua,20538,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Soledad Etla,20539,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Villa de Tamazulápam del Progreso,20540,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Tanetze de Zaragoza,20541,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Taniche,20542,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Teococuilco de Marcos Pérez,20544,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Teotitlán del Valle,20546,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Teotongo,20547,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Tezoatlán de Segura y Luna,20549,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,San Jerónimo Tlacochahuaya,20550,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Tlacolula de Matamoros,20551,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Tlacotepec Plumas,20552,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Tlalixtac de Cabrera,20553,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Totontepec Villa de Morelos,20554,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Trinidad Zaachila,20555,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,La Trinidad Vista Hermosa,20556,sí,no aplica,no aplica,7.1,2017-09-19
+Oaxaca,Unión Hidalgo,20557,no aplica,sí,sí,8.2,2017-09-07
+Oaxaca,Villa Díaz Ordaz,20560,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Yaxe,20561,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Yogana,20563,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Villa de Zaachila,20565,no aplica,no aplica,sí,8.2,2017-09-07
+Oaxaca,Zapotitlán Lagunas,20567,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Zapotitlán Palmas,20568,sí,no aplica,sí,7.1,2017-09-19
+Oaxaca,Zimatlán de Álvarez,20570,no aplica,no aplica,sí,8.2,2017-09-07
+Puebla,Acajete,21001,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Acatlán,21003,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Acteopan,21005,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Ahuatlán,21007,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Ahuehuetitla,21009,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Albino Zertuche,21011,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Amozoc,21015,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Atexcal,21018,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Atlixco,21019,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Atoyatempan,21020,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Atzala,21021,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Atzitzihuacán,21022,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Axutla,21024,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Calpan,21026,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Caltepec,21027,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Coatzingo,21031,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cohetzala,21032,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cohuecan,21033,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Coronango,21034,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Coyotepec,21037,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cuapiaxtla de Madero,21038,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cuautinchán,21040,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cuautlancingo,21041,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Cuayuca de Andrade,21042,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chiautla,21047,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chiautzingo,21048,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chietla,21051,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chigmecatitlán,21052,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chila,21055,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chila de la Sal,21056,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Chinantla,21059,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Domingo Arenas,21060,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Epatlán,21062,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Guadalupe,21066,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huaquechula,21069,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huatlatlauca,21070,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huehuetlán el Chico,21073,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huejotzingo,21074,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huitziltepec,21079,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Ixcamilpa de Guerrero,21081,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Ixcaquixtla,21082,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Izúcar de Matamoros,21085,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Jolalpan,21087,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Juan C. Bonilla,21090,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Juan N. Méndez,21092,no aplica,sí,sí,7.1,2017-09-19
+Puebla,La Magdalena Tlatlauquitepec,21095,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Mixtla,21097,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Molcaxac,21098,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Nealtican,21102,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Ocoyucan,21106,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Petlalcingo,21112,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Piaxtla,21113,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Puebla,21114,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Los Reyes de Juárez,21118,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Andrés Cholula,21119,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Diego la Mesa Tochimiltzingo,21121,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Felipe Teotlalcingo,21122,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Gregorio Atzompa,21125,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Jerónimo Tecuanipan,21126,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Jerónimo Xayacatlán,21127,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Juan Atzompa,21131,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Martín Texmelucan,21132,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Martín Totoltepec,21133,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Matías Tlalancaleca,21134,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Miguel Ixitlán,21135,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Miguel Xoxtla,21136,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Nicolás de los Ranchos,21138,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Pablo Anicano,21139,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Pedro Cholula,21140,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Pedro Yeloixtlahuaca,21141,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Salvador el Verde,21143,no aplica,sí,sí,7.1,2017-09-19
+Puebla,San Salvador Huixcolotla,21144,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Santa Catarina Tlaltempan,21146,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Santa Inés Ahuatempan,21147,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Santa Isabel Cholula,21148,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Huehuetlán el Grande,21150,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Santo Tomás Hueyotlipan,21151,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tecali de Herrera,21153,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tecamachalco,21154,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tecomatlán,21155,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tehuacán,21156,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tehuitzingo,21157,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Teopantlán,21159,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Teotlalco,21160,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepanco de López,21161,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepatlaxco de Hidalgo,21163,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepeaca,21164,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepemaxalco,21165,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepeojuma,21166,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepexco,21168,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepexi de Rodríguez,21169,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tepeyahualco de Cuauhtémoc,21171,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tianguismanalco,21175,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tilapa,21176,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tlacotepec de Benito Juárez,21177,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tlahuapan,21180,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tlaltenango,21181,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tlanepantla,21182,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tlapanalá,21185,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tochimilco,21188,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tochtepec,21189,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Totoltepec de Guerrero,21190,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tulcingo,21191,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Tzicatlacoyan,21193,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Xayacatlán de Bravo,21196,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Xicotlán,21198,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Xochiltepec,21201,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Xochitlán Todos Santos,21203,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Yehualtepec,21205,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Zacapala,21206,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Zapotitlán,21209,no aplica,sí,sí,7.1,2017-09-19
+Puebla,Zaragoza,21211,no aplica,sí,sí,7.1,2017-09-19
+Tlaxcala,Amaxac de Guerrero,29001,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Apetatitlán de Antonio Carvajal,29002,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Apizaco,29005,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Cuaxomulco,29009,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Chiautempan,29010,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Hueyotlipan,29014,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Ixtacuixtla de Mariano Matamoros,29015,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Mazatecochco de José María Morelos,29017,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Contla de Juan Cuamatzi,29018,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tepetitla de Lardizábal,29019,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Acuamanala de Miguel Hidalgo,29022,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Natívitas,29023,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Panotla,29024,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Pablo del Monte,29025,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Cruz Tlaxcala,29026,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tenancingo,29027,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Teolocholco,29028,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tepeyanco,29029,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tetlatlahuca,29032,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tlaxcala,29033,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Totolac,29036,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Tzompantepec,29038,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Xaltocan,29040,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Papalotla de Xicohténcatl,29041,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Xicohtzinco,29042,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Yauhquemehcan,29043,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Zacatelco,29044,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,La Magdalena Tlaltelulco,29048,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Damián Texóloc,29049,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Francisco Tetlanohcan,29050,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Jerónimo Zacualpan,29051,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San José Teacalco,29052,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Juan Huactzinco,29053,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Lorenzo Axocomanitla,29054,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,San Lucas Tecopilco,29055,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Ana Nopalucan,29056,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Apolonia Teacalco,29057,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Catarina Ayometla,29058,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Cruz Quilehtla,29059,no aplica,no aplica,sí,7.1,2017-09-19
+Tlaxcala,Santa Isabel Xiloxoxtla,29060,no aplica,no aplica,sí,7.1,2017-09-19
+Veracruz de Ignacio de la Llave,Coatzacoalcos,30039,no aplica,no aplica,sí,8.2,2017-09-07
+Veracruz de Ignacio de la Llave,Cosoleacaque,30048,no aplica,no aplica,sí,8.2,2017-09-07
+Veracruz de Ignacio de la Llave,Hidalgotitlán,30070,no aplica,no aplica,sí,8.2,2017-09-07
+Veracruz de Ignacio de la Llave,Jáltipan,30089,no aplica,no aplica,sí,8.2,2017-09-07
+Veracruz de Ignacio de la Llave,Minatitlán,30108,no aplica,no aplica,sí,8.2,2017-09-07
+Veracruz de Ignacio de la Llave,Texistepec,30172,no aplica,no aplica,sí,8.2,2017-09-07
