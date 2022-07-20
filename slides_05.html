@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Sesión IV: Presentación de resultados</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Guillermo de Anda-Jáuregui y Cristóbal Fresno" />
-    <meta name="date" content="2019-01-01" />
+    <meta name="author" content="Guillermo de Anda-Jáuregui y Laura Gómez-Romero" />
+    <meta name="date" content="2022-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
   </head>
@@ -13,9 +14,9 @@
 class: center, middle, inverse, title-slide
 
 # Sesión IV: Presentación de resultados
-### Guillermo de Anda-Jáuregui y Cristóbal Fresno
+### Guillermo de Anda-Jáuregui y Laura Gómez-Romero
 ### Instituto Nacional de Medicina Genómica
-### 2019
+### 2022
 
 ---
 
@@ -351,7 +352,7 @@ class: inverse, center, middle
 ---
 class: inverse, left, middle
 # Ejercicio: 
-## - Hombre no conforme pide que los boxplots se coloquen en el lugar correcto, es decir, algo como un 2x2 donde:
+## - Persona no conforme pide que los boxplots se coloquen en el lugar correcto, es decir, algo como un 2x2 donde:
 ## pc, pa
 ## NULL, pb (rotado)
 ---
@@ -359,7 +360,7 @@ class: inverse, center, middle
 ![](slides_05_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
 ---
 class: inverse, left, middle
-# Hombre sigue disconforme pide que:
+# Persona sigue disconforme pide que:
 # - Se quiten las leyendas que sobran
 # - Se modifique la proporción de las gráficas para resaltar la de dispersión.
 ---
@@ -367,7 +368,7 @@ class: inverse, center, middle
 ![](slides_05_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
 ---
 class: inverse, left, middle
-# Hombre sigue disconforme pide que:
+# Persona sigue disconforme pide que:
 # - ~~Se quiten las leyendas que sobran~~
 # - Se modifique la proporción de las gráficas para resaltar la de dispersión.
 ---
@@ -375,7 +376,7 @@ class: inverse, center, middle
 ![](slides_05_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
 ---
 class: inverse, left, middle
-# Hombre sigue disconforme pide que:
+# Persona sigue disconforme pide que:
 # - ~~Se quiten las leyendas que sobran~~
 # - ~~Se modifique la proporción de las gráficas para resaltar la de dispersión~~
 ---
@@ -383,7 +384,7 @@ class: inverse, center, middle
 ![](slides_05_files/figure-html/unnamed-chunk-31-1.png)&lt;!-- --&gt;
 ---
 class: inverse, left, middle
-# Hombre sigue disconforme pide que:
+# Persona sigue disconforme pide que:
 # - Coincidan los ejes del diagrama de dispersión y el boxplot inferior (Tarea extra clase)
 ---
 class: inverse, center, middle
@@ -519,6 +520,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -536,17 +563,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {

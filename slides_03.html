@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sesión II: Manipulando datos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Guillermo de Anda-Jáuregui y Laura Gómez-Romero" />
+    <meta name="date" content="2022-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sesión II: Manipulando datos
+### Guillermo de Anda-Jáuregui y Laura Gómez-Romero
+### 2022
+
+---
+
+
+class: inverse, center
+
+# ¿Qué es tener datos **limpios**?
+
+---
+class: inverse, center, middle
+
+&lt;img src="figures/untidy_data.png"&gt;
+
+---
+class: inverse, center, middle
+
+# Los datos limpios
+
+
+## - Cada columna es una variable
+## - Cada renglón es una observación
+
+---
+class: inverse, center, middle
+
+&lt;img src="figures/tidy_data.png"&gt;
+
+---
+class: inverse, center, middle
+
+
+
+```r
+my_data
+```
+
+```
+## # A tibble: 7 x 10
+##      ID direccion  subdireccion puesto  apellido_paterno apellido_materno nombre
+##   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt; 
+## 1     1 administr… limpieza     limpie… Sanchez          Pérez            Santi…
+## 2     2 jurídico   legal        practi… Lopez            Domínguez        Luisa 
+## 3     3 jurídico   legal        practi… Romero           Madero           Agust…
+## 4     4 operativo  ventas       ventas  Jimenez          Ordoñez          Luis  
+## 5     5 administr… transporte   chofer  Perez            Rubio            Diana 
+## 6     6 administr… finanzas     analis… García           Moreno           Danie…
+## 7     7 operativo  compras      compras Cabrera          NA               Miguel
+## # … with 3 more variables: fecha_inicio &lt;chr&gt;, fecha_fin &lt;chr&gt;, interno &lt;chr&gt;
+```
+
+---
+class: inverse, center
+
+# El paquete tidyR
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png", height = "90"&gt;
+
+---
+class: inverse, center
+
+# Datos limpios, código limpio
+
+.left[
+### - Si tenemos datos limpios, podemos pensar en usar código parecido para diferentes problemas.
+
+### - Código limpio: más legible.
+
+### - Más tiempo para pensar en nuestros análisis.
+
+]
+
+---
+class: inverse, center
+
+# El paquete magrittR 
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png", height = "90"&gt;
+
+---
+class: inverse, center
+
+# Funciones anidadas
+
+
+```r
+x &lt;- 1:10
+
+(exp(sqrt(log(x))))
+```
+
+```
+##  [1] 1.000000 2.299185 2.852361 3.245956 3.556000 3.813572 4.034808 4.229259
+##  [9] 4.403078 4.560477
+```
+
+
+---
+class: inverse, center
+
+# Objetos intermedios
+
+
+```r
+x &lt;- 1:10
+
+y &lt;- log(x)
+
+z &lt;- sqrt(y)
+
+w &lt;- exp(z)
+
+w
+```
+
+```
+##  [1] 1.000000 2.299185 2.852361 3.245956 3.556000 3.813572 4.034808 4.229259
+##  [9] 4.403078 4.560477
+```
+---
+class: inverse, center
+
+# Sobreescribir mi objeto
+
+
+```r
+x &lt;- 1:10
+
+x &lt;- log(x)
+
+x &lt;- sqrt(x)
+
+x &lt;- exp(x)
+
+x
+```
+
+```
+##  [1] 1.000000 2.299185 2.852361 3.245956 3.556000 3.813572 4.034808 4.229259
+##  [9] 4.403078 4.560477
+```
+
+---
+class: inverse, center
+
+# El pipe 
+
+# %&gt;% 
+
+---
+class: inverse, center
+
+# El pipe  %&gt;% 
+
+
+```r
+x &lt;- 1:10
+
+my_result &lt;-
+  
+  x %&gt;%
+  log() %&gt;% 
+  sqrt() %&gt;% 
+  exp 
+  
+my_result
+```
+
+```
+##  [1] 1.000000 2.299185 2.852361 3.245956 3.556000 3.813572 4.034808 4.229259
+##  [9] 4.403078 4.560477
+```
+
+---
+
+class: inverse, center
+
+# Otros pipes
+
+## la TE
+
+
+```r
+rnorm(100) %&gt;%
+  matrix(ncol = 2) %T&gt;%
+  plot() %&gt;%
+  str()
+```
+
+![](slides_03_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+```
+##  num [1:50, 1:2] 0.286 -0.859 -0.125 -0.58 1.793 ...
+```
+
+---
+
+class: inverse, center
+
+# Otros pipes
+
+## la EXPLOSIÓN
+
+
+```r
+mtcars %$%
+  cor(disp, mpg)
+```
+
+```
+## [1] -0.8475514
+```
+---
+
+class: inverse, center
+
+# ¿Qué queremos manipular?
+
+.left[
+
+## En un set de datos rectangulares...
+
+### - Queremos modificar variables completas.
+
+### - Queremos hacer operaciones y sacar nuevas variables.
+
+### - Queremos seleccionar observaciones que cumplan características.
+
+### - Queremos agrupar.
+
+### - Queremos sacar descripciones de los datos. 
+
+### - Queremos reordenar variables. 
+
+]
+ 
+
+---
+class: inverse, center
+
+# Dataset: nycflights13
+
+&lt;img src ="figures/nyc_plane.jpg"&gt;
+
+https://thumbs.dreamstime.com/b/airplane-take-off-new-york-skyline-travel-concept-64524867.jpg
+---
+class: inverse, center
+
+# Filtrados
+
+# El paquete dplyr
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png", height = "90"&gt;
+
+--
+
+## Una *gramática* para la manipulación de datos
+
+---
+class: inverse, center, middle
+
+# Tidyverse =&gt; Verbos 
+
+--
+
+###  *mutate*
+
+###  *select*
+
+###  *filter*
+
+###  *group_by*
+
+###  *summarise*
+
+###  *arrange*
+
+---
+class: inverse, center, middle
+
+#Analicemos flights
+
+---
+class: inverse, center, middle
+
+
+```r
+flights &lt;- vroom::vroom(file = "data/flights.txt")
+```
+
+```
+## Rows: 336776 Columns: 19
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: "\t"
+## chr   (4): carrier, tailnum, origin, dest
+## dbl  (14): year, month, day, dep_time, sched_dep_time, dep_delay, arr_time, ...
+## dttm  (1): time_hour
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+---
+class: inverse, center, middle
+
+
+```r
+flights 
+```
+
+```
+## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # … with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;dbl&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+
+---
+class: inverse, center
+
+# Filtrados
+
+### Buscamos observaciones (renglones) que cumplan una condición lógica
+
+# Verbo *filter*
+---
+class: inverse, center
+
+# filter
+
+
+```r
+filter(.data = flights, 
+       dest  == "SBN")
+```
+
+```
+## # A tibble: 10 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013    10    18     1820           1745        35     2030           2011
+##  2  2013    11     1     2012           1905        67     2221           2131
+##  3  2013    11    22     2013           1905        68     2224           2131
+##  4  2013    12     1     1241           1215        26     1431           1431
+##  5  2013     8    30     1909           1910        -1     2117           2136
+##  6  2013     9     1      833            840        -7     1030           1040
+##  7  2013     9     8      847            840         7     1043           1040
+##  8  2013     9    20     1948           1950        -2     2207           2216
+##  9  2013     9    22      837            840        -3     1025           1040
+## 10  2013     9    27     2011           1950        21     2209           2216
+## # … with 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;dbl&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+# filter
+
+
+```r
+flights %&gt;% 
+  filter(dest  == "HDN")
+```
+
+```
+## # A tibble: 15 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     5      829            830        -1     1047           1111
+##  2  2013     1    12      827            830        -3     1112           1111
+##  3  2013     1    19      843            830        13     1123           1111
+##  4  2013     1    26      828            830        -2     1114           1111
+##  5  2013    12    21      916            830        46     1149           1117
+##  6  2013    12    28      913            829        44     1128           1116
+##  7  2013     2     2      858            830        28     1124           1111
+##  8  2013     2     9       NA            830        NA       NA           1111
+##  9  2013     2    16      834            830         4     1114           1111
+## 10  2013     2    23      826            830        -4     1050           1111
+## 11  2013     3     2      854            830        24     1104           1111
+## 12  2013     3     9      838            830         8     1107           1111
+## 13  2013     3    16      845            830        15     1154           1111
+## 14  2013     3    23      835            830         5     1104           1111
+## 15  2013     3    30      825            830        -5     1045           1111
+## # … with 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;dbl&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+# filter
+
+
+```r
+flights %&gt;% 
+  filter(dest  == "HDN",
+       !is.na(dep_time)
+       )
+```
+
+```
+## # A tibble: 14 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     5      829            830        -1     1047           1111
+##  2  2013     1    12      827            830        -3     1112           1111
+##  3  2013     1    19      843            830        13     1123           1111
+##  4  2013     1    26      828            830        -2     1114           1111
+##  5  2013    12    21      916            830        46     1149           1117
+##  6  2013    12    28      913            829        44     1128           1116
+##  7  2013     2     2      858            830        28     1124           1111
+##  8  2013     2    16      834            830         4     1114           1111
+##  9  2013     2    23      826            830        -4     1050           1111
+## 10  2013     3     2      854            830        24     1104           1111
+## 11  2013     3     9      838            830         8     1107           1111
+## 12  2013     3    16      845            830        15     1154           1111
+## 13  2013     3    23      835            830         5     1104           1111
+## 14  2013     3    30      825            830        -5     1045           1111
+## # … with 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;dbl&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+---
+class: inverse, center
+
+# slice
+
+### Nos deja seleccionar renglones por posición
+
+
+```r
+flights %&gt;% 
+  slice(14:17)
+```
+
+```
+## # A tibble: 4 x 19
+##    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+## 1  2013     1     1      558            600        -2      923            937
+## 2  2013     1     1      559            600        -1      941            910
+## 3  2013     1     1      559            559         0      702            706
+## 4  2013     1     1      559            600        -1      854            902
+## # … with 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;dbl&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+# select
+
+## Permite escoger algunas variables (columnas)
+
+---
+class: inverse, center
+
+# select
+
+
+```r
+flights %&gt;% 
+  select(flight, carrier, origin, dest, distance)
+```
+
+```
+## # A tibble: 336,776 x 5
+##    flight carrier origin dest  distance
+##     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;
+##  1   1545 UA      EWR    IAH       1400
+##  2   1714 UA      LGA    IAH       1416
+##  3   1141 AA      JFK    MIA       1089
+##  4    725 B6      JFK    BQN       1576
+##  5    461 DL      LGA    ATL        762
+##  6   1696 UA      EWR    ORD        719
+##  7    507 B6      EWR    FLL       1065
+##  8   5708 EV      LGA    IAD        229
+##  9     79 B6      JFK    MCO        944
+## 10    301 AA      LGA    ORD        733
+## # … with 336,766 more rows
+```
+
+---
+class: inverse, center
+
+
+```r
+flights %&gt;% 
+  select(contains("time"))
+```
+
+```
+## # A tibble: 336,776 x 6
+##    dep_time sched_dep_time arr_time sched_arr_time air_time time_hour          
+##       &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt; &lt;dttm&gt;             
+##  1      517            515      830            819      227 2013-01-01 10:00:00
+##  2      533            529      850            830      227 2013-01-01 10:00:00
+##  3      542            540      923            850      160 2013-01-01 10:00:00
+##  4      544            545     1004           1022      183 2013-01-01 10:00:00
+##  5      554            600      812            837      116 2013-01-01 11:00:00
+##  6      554            558      740            728      150 2013-01-01 10:00:00
+##  7      555            600      913            854      158 2013-01-01 11:00:00
+##  8      557            600      709            723       53 2013-01-01 11:00:00
+##  9      557            600      838            846      140 2013-01-01 11:00:00
+## 10      558            600      753            745      138 2013-01-01 11:00:00
+## # … with 336,766 more rows
+```
+
+---
+class: inverse, center
+
+
+```r
+flights %&gt;% 
+  select_if(is_character)
+```
+
+```
+## # A tibble: 336,776 x 4
+##    carrier tailnum origin dest 
+##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;
+##  1 UA      N14228  EWR    IAH  
+##  2 UA      N24211  LGA    IAH  
+##  3 AA      N619AA  JFK    MIA  
+##  4 B6      N804JB  JFK    BQN  
+##  5 DL      N668DN  LGA    ATL  
+##  6 UA      N39463  EWR    ORD  
+##  7 B6      N516JB  EWR    FLL  
+##  8 EV      N829AS  LGA    IAD  
+##  9 B6      N593JB  JFK    MCO  
+## 10 AA      N3ALAA  LGA    ORD  
+## # … with 336,766 more rows
+```
+
+---
+class: inverse, center
+
+#Podemos concatenar verbos usando el pipe
+
+
+```r
+flights %&gt;% 
+  select("dest", contains("time")) %&gt;% 
+  filter(dest == "HDN") %&gt;% 
+  tidyr::drop_na() %&gt;% 
+  slice(1:7)
+```
+
+```
+## # A tibble: 7 x 7
+##   dest  dep_time sched_dep_time arr_time sched_arr_time air_time
+##   &lt;chr&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;
+## 1 HDN        829            830     1047           1111      243
+## 2 HDN        827            830     1112           1111      259
+## 3 HDN        843            830     1123           1111      260
+## 4 HDN        828            830     1114           1111      265
+## 5 HDN        916            830     1149           1117      254
+## 6 HDN        913            829     1128           1116      239
+## 7 HDN        858            830     1124           1111      246
+## # … with 1 more variable: time_hour &lt;dttm&gt;
+```
+
+
+---
+class: inverse, center
+
+# pull
+
+### Permite sacar una variable como vector 
+
+
+```r
+flights %&gt;% 
+  pull("dest") %&gt;% 
+  head
+```
+
+```
+## [1] "IAH" "IAH" "MIA" "BQN" "ATL" "ORD"
+```
+---
+class: inverse, center
+
+# Agrupamientos
+
+### *group_by* me permite agregar por variables categóricas (o coercible a variables categóricas).
+
+### Esto me servirá para hacer resúmenes después. 
+
+---
+class: inverse, center
+
+# Agrupamientos
+
+
+```r
+flights %&gt;% 
+  group_by(dest)
+```
+
+```
+## # A tibble: 336,776 x 19
+## # Groups:   dest [105]
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # … with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;dbl&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+# Agrupamientos
+
+
+```r
+flights %&gt;% 
+  group_by(dest, origin)
+```
+
+```
+## # A tibble: 336,776 x 19
+## # Groups:   dest, origin [224]
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # … with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;dbl&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+# Funciones de resumen
+
+### Nos van a dar descripciones de nuestro conjunto de datos 
+
+### Funcionan en el conjunto original, filtrado, agrupado, o manipulado
+
+---
+class: inverse, center
+
+
+```r
+flights %&gt;% 
+  summarise(mean_distance = mean(distance))
+```
+
+```
+## # A tibble: 1 x 1
+##   mean_distance
+##           &lt;dbl&gt;
+## 1         1040.
+```
+---
+class: inverse, center
+
+
+```r
+flights %&gt;% 
+  select(contains("time")) %&gt;% 
+  summarise(mean_deptime = mean(dep_time),
+            mean_sched_deptime = mean(sched_dep_time),
+            mean_arr_time = mean(arr_time),
+            mean_sched_arr_time = mean(sched_arr_time),
+            mean_air_time = mean(air_time),
+            mean_time_hour = mean(time_hour)
+            )
+```
+
+```
+## # A tibble: 1 x 6
+##   mean_deptime mean_sched_deptime mean_arr_time mean_sched_arr_ti… mean_air_time
+##          &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+## 1           NA              1344.            NA              1536.            NA
+## # … with 1 more variable: mean_time_hour &lt;dttm&gt;
+```
+
+---
+class: inverse, center
+
+
+```r
+flights %&gt;% 
+  select(contains("time")) %&gt;% 
+  summarise_all(mean, na.rm=TRUE)
+```
+
+```
+## # A tibble: 1 x 6
+##   dep_time sched_dep_time arr_time sched_arr_time air_time time_hour          
+##      &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt; &lt;dttm&gt;             
+## 1    1349.          1344.    1502.          1536.     151. 2013-07-03 09:22:54
+```
+---
+class: inverse, center
+
+# Puedo usarlas sobre datos agrupados
+
+
+```r
+flights %&gt;% 
+  group_by(dest) %&gt;% 
+  select(contains("time")) %&gt;% 
+  summarise_all(mean, na.rm=TRUE)
+```
+
+```
+## Adding missing grouping variables: `dest`
+```
+
+```
+## # A tibble: 105 x 7
+##    dest  dep_time sched_dep_time arr_time sched_arr_time air_time
+##    &lt;chr&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;
+##  1 ABQ      2006.          2001.    2049.          2278.    249. 
+##  2 ACK      1033.          1033.    1145.          1139.     42.1
+##  3 ALB      1627.          1610.    1702.          1718.     31.8
+##  4 ANC      1635.          1618.    1968           1966.    413. 
+##  5 ATL      1293.          1287.    1513.          1529.    113. 
+##  6 AUS      1521.          1506.    1614.          1816.    213. 
+##  7 AVL      1175.          1169.    1373.          1362.     89.9
+##  8 BDL      1490.          1506.    1549.          1610.     25.5
+##  9 BGR      1690.          1673.    1715.          1836.     54.1
+## 10 BHM      1944.          1909.    2028.          2078.    123. 
+## # … with 95 more rows, and 1 more variable: time_hour &lt;dttm&gt;
+```
+---
+class: inverse, center
+
+# Puedo usarlas sobre datos agrupados
+
+
+```r
+flights %&gt;% 
+  group_by(origin, dest) %&gt;% 
+  select(contains("time")) %&gt;% 
+  summarise_all(list(med = median,
+                     avg = mean
+                     ),
+                na.rm = TRUE
+                     )
+```
+
+```
+## Adding missing grouping variables: `origin`, `dest`
+```
+
+```
+## # A tibble: 224 x 14
+## # Groups:   origin [3]
+##    origin dest  dep_time_med sched_dep_time_med arr_time_med sched_arr_time_med
+##    &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;              &lt;dbl&gt;        &lt;dbl&gt;              &lt;dbl&gt;
+##  1 EWR    ALB          1738                1721        1832                1822
+##  2 EWR    ANC          1618                1615        1957                1953
+##  3 EWR    ATL          1257                1300        1513                1519
+##  4 EWR    AUS          1503                1459        1746                1805
+##  5 EWR    AVL          1156                1200        1339                1350
+##  6 EWR    BDL          1328.               1327        1414.               1422
+##  7 EWR    BNA          1306.               1300        1421                1425
+##  8 EWR    BOS          1400                1400        1458                1511
+##  9 EWR    BQN          2054                2038         105                  42
+## 10 EWR    BTV          1231                1209        1316                1320
+## # … with 214 more rows, and 8 more variables: air_time_med &lt;dbl&gt;,
+## #   time_hour_med &lt;dttm&gt;, dep_time_avg &lt;dbl&gt;, sched_dep_time_avg &lt;dbl&gt;,
+## #   arr_time_avg &lt;dbl&gt;, sched_arr_time_avg &lt;dbl&gt;, air_time_avg &lt;dbl&gt;,
+## #   time_hour_avg &lt;dttm&gt;
+```
+---
+class: inverse, center
+
+# Contar: n, count, tally
+
+### n
+
+
+```r
+flights %&gt;% 
+  group_by(month, origin, dest) %&gt;% 
+  summarize(cuantos = n())
+```
+
+```
+## `summarise()` has grouped output by 'month', 'origin'. You can override using the `.groups` argument.
+```
+
+```
+## # A tibble: 2,313 x 4
+## # Groups:   month, origin [36]
+##    month origin dest  cuantos
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;int&gt;
+##  1     1 EWR    ALB        64
+##  2     1 EWR    ATL       362
+##  3     1 EWR    AUS        51
+##  4     1 EWR    AVL         2
+##  5     1 EWR    BDL        37
+##  6     1 EWR    BNA       111
+##  7     1 EWR    BOS       430
+##  8     1 EWR    BQN        31
+##  9     1 EWR    BTV       100
+## 10     1 EWR    BUF       119
+## # … with 2,303 more rows
+```
+---
+class: inverse, center
+### count
+
+
+```r
+flights %&gt;% 
+  count()
+```
+
+```
+## # A tibble: 1 x 1
+##        n
+##    &lt;int&gt;
+## 1 336776
+```
+---
+class: inverse, center
+
+### count
+
+
+```r
+flights %&gt;% 
+  count(origin)
+```
+
+```
+## # A tibble: 3 x 2
+##   origin      n
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 EWR    120835
+## 2 JFK    111279
+## 3 LGA    104662
+```
+---
+class: inverse, center
+
+### count - datos agrupados
+
+
+```r
+flights %&gt;% 
+  group_by(month) %&gt;% 
+  count(origin)
+```
+
+```
+## # A tibble: 36 x 3
+## # Groups:   month [12]
+##    month origin     n
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;int&gt;
+##  1     1 EWR     9893
+##  2     1 JFK     9161
+##  3     1 LGA     7950
+##  4     2 EWR     9107
+##  5     2 JFK     8421
+##  6     2 LGA     7423
+##  7     3 EWR    10420
+##  8     3 JFK     9697
+##  9     3 LGA     8717
+## 10     4 EWR    10531
+## # … with 26 more rows
+```
+
+---
+class: inverse, center
+
+#tally
+
+
+```r
+flights %&gt;% 
+  group_by(month, origin, dest) %&gt;% 
+  tally()
+```
+
+```
+## # A tibble: 2,313 x 4
+## # Groups:   month, origin [36]
+##    month origin dest      n
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;
+##  1     1 EWR    ALB      64
+##  2     1 EWR    ATL     362
+##  3     1 EWR    AUS      51
+##  4     1 EWR    AVL       2
+##  5     1 EWR    BDL      37
+##  6     1 EWR    BNA     111
+##  7     1 EWR    BOS     430
+##  8     1 EWR    BQN      31
+##  9     1 EWR    BTV     100
+## 10     1 EWR    BUF     119
+## # … with 2,303 more rows
+```
+
+---
+
+class: inverse, center
+
+# Rangos y disperciones
+
+
+```r
+flights %&gt;% 
+  group_by(origin, dest) %&gt;% 
+  summarise(min_airtime = min(air_time, na.rm = TRUE),
+            max_airtime = max(air_time, na.rm = TRUE),
+            std_dev_airtime = sd(air_time, na.rm = TRUE),
+            cuantos = n()
+            )
+```
+
+```
+## Warning in min(air_time, na.rm = TRUE): no non-missing arguments to min;
+## returning Inf
+```
+
+```
+## Warning in max(air_time, na.rm = TRUE): no non-missing arguments to max;
+## returning -Inf
+```
+
+```
+## `summarise()` has grouped output by 'origin'. You can override using the `.groups` argument.
+```
+
+```
+## # A tibble: 224 x 6
+## # Groups:   origin [3]
+##    origin dest  min_airtime max_airtime std_dev_airtime cuantos
+##    &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;   &lt;int&gt;
+##  1 EWR    ALB            24          50            3.08     439
+##  2 EWR    ANC           388         434           14.7        8
+##  3 EWR    ATL            88         176            9.99    5022
+##  4 EWR    AUS           174         301           17.9      968
+##  5 EWR    AVL            76         119            7.45     265
+##  6 EWR    BDL            20          56            3.29     443
+##  7 EWR    BNA            70         176           10.9     2336
+##  8 EWR    BOS            30         112            4.92    5327
+##  9 EWR    BQN           173         231            8.88     297
+## 10 EWR    BTV            34          69            3.67     931
+## # … with 214 more rows
+```
+---
+class: inverse, center
+
+# dplyr + pipe + ggplot2
+
+
+```r
+flights %&gt;% 
+  group_by(origin, dest) %&gt;% 
+  summarise(mean_dep_delay = mean(dep_delay, na.rm = TRUE),
+            mean_arr_delay = mean(arr_delay, na.rm = TRUE)
+            ) %&gt;% 
+  ggplot(mapping = aes(x = mean_dep_delay, 
+                       y = mean_arr_delay, 
+                       colour = as_factor(origin)
+                       )
+         ) +
+  geom_point()
+```
+
+---
+class: inverse, center
+
+# dplyr + pipe + ggplot2
+
+
+```
+## `summarise()` has grouped output by 'origin'. You can override using the `.groups` argument.
+```
+
+![](slides_03_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
+---
+class: inverse, center
+
+# ¡¡¡Nota!!!
+# dplyr + %&gt;%  + ggplot2 != Tidyverse !!!!
+
+## ¡Hay muchas otros paquetes!
+
+## Lo importante es la filosofía: datos limpios, usar verbos...
+
+---
+class: inverse, center
+# Ejercicio: 
+
+.left[ 
+### Queremos saber como se comportaron las aerolíneas a lo largo del año 2013, mes a mes, en términos del tiempo promedio de vuelo. 
+
+### Genere un gráfico de puntos que le permita contestar: 
+
+### ¿Qué aerolínea tiene el tiempo de viaje más largo? ¿Es la misma todo el año?
+
+### ¿Qué aerolínea tiene el tiempo de viaje más corto? ¿Es la misma todo el año?
+
+### Si el gráfico no es suficiente, apóyese en resúmenes de su análisis de datos.
+]
+
+---
+class: inverse, center, middle
+
+# Mutate
+
+## Transformaciones de variables
+
+---
+class: inverse, center, middle
+
+# Mutate
+
+## Quiero saber el tiempo que estaba esperado para los vuelos
+
+
+```r
+flights %&gt;% 
+  select(carrier, flight, air_time, dep_delay, arr_delay)
+```
+
+```
+## # A tibble: 336,776 x 5
+##    carrier flight air_time dep_delay arr_delay
+##    &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1 UA        1545      227         2        11
+##  2 UA        1714      227         4        20
+##  3 AA        1141      160         2        33
+##  4 B6         725      183        -1       -18
+##  5 DL         461      116        -6       -25
+##  6 UA        1696      150        -4        12
+##  7 B6         507      158        -5        19
+##  8 EV        5708       53        -3       -14
+##  9 B6          79      140        -3        -8
+## 10 AA         301      138        -2         8
+## # … with 336,766 more rows
+```
+### *air_time* me dice cuanto paso en el aire
+
+### *dep_delay* y *arr_delay* me dicen cuanto se demoró
+
+--
+
+### ¡Tengo que generar una nueva variable!
+
+---
+class: inverse, center, middle
+
+
+```r
+flights %&gt;% 
+  select(carrier, flight, air_time, dep_delay, arr_delay) %&gt;% 
+  mutate(expected_airtime = air_time - dep_delay - arr_delay)
+```
+
+```
+## # A tibble: 336,776 x 6
+##    carrier flight air_time dep_delay arr_delay expected_airtime
+##    &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;
+##  1 UA        1545      227         2        11              214
+##  2 UA        1714      227         4        20              203
+##  3 AA        1141      160         2        33              125
+##  4 B6         725      183        -1       -18              202
+##  5 DL         461      116        -6       -25              147
+##  6 UA        1696      150        -4        12              142
+##  7 B6         507      158        -5        19              144
+##  8 EV        5708       53        -3       -14               70
+##  9 B6          79      140        -3        -8              151
+## 10 AA         301      138        -2         8              132
+## # … with 336,766 more rows
+```
+
+---
+class: inverse, center, middle
+
+Tambien puedo hacer variables intermedias
+
+
+
+
+```
+## # A tibble: 336,776 x 7
+##    carrier flight air_time dep_delay arr_delay total_delay expected_airtime
+##    &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+##  1 UA        1545      227         2        11          13              214
+##  2 UA        1714      227         4        20          24              203
+##  3 AA        1141      160         2        33          35              125
+##  4 B6         725      183        -1       -18         -19              202
+##  5 DL         461      116        -6       -25         -31              147
+##  6 UA        1696      150        -4        12           8              142
+##  7 B6         507      158        -5        19          14              144
+##  8 EV        5708       53        -3       -14         -17               70
+##  9 B6          79      140        -3        -8         -11              151
+## 10 AA         301      138        -2         8           6              132
+## # … with 336,766 more rows
+```
+
+---
+class: inverse, center, middle
+
+# case_when para condicionales
+
+Quiero una variable que diga si se adelantó o se atrasó 
+
+
+```r
+my_flights &lt;- 
+flights %&gt;% 
+  mutate(total_delay = dep_delay + arr_delay,
+         expected_airtime = air_time - total_delay
+         ) %&gt;% 
+  mutate(net_gainloss = case_when(total_delay &gt; 0 ~ "retraso",
+                             total_delay == 0 ~ "a_tiempo",
+                             total_delay &lt; 0 ~ "adelanto"
+                             )
+         )
+```
+---
+class: inverse, center, middle
+
+# case_when para condicionales
+
+Quiero una variable que diga si se adelantó o se atrasó 
+
+
+```r
+my_flights
+```
+
+```
+## # A tibble: 336,776 x 22
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # … with 336,766 more rows, and 14 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;dbl&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
+## #   total_delay &lt;dbl&gt;, expected_airtime &lt;dbl&gt;, net_gainloss &lt;chr&gt;
+```
+
+---
+class: inverse, center, middle
+
+# case_when para condicionales
+
+Quiero una variable que diga si se adelantó o se atrasó 
+
+
+```r
+my_flights %&gt;% 
+  select(carrier, flight, air_time, expected_airtime, total_delay, net_gainloss)
+```
+
+```
+## # A tibble: 336,776 x 6
+##    carrier flight air_time expected_airtime total_delay net_gainloss
+##    &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;       
+##  1 UA        1545      227              214          13 retraso     
+##  2 UA        1714      227              203          24 retraso     
+##  3 AA        1141      160              125          35 retraso     
+##  4 B6         725      183              202         -19 adelanto    
+##  5 DL         461      116              147         -31 adelanto    
+##  6 UA        1696      150              142           8 retraso     
+##  7 B6         507      158              144          14 retraso     
+##  8 EV        5708       53               70         -17 adelanto    
+##  9 B6          79      140              151         -11 adelanto    
+## 10 AA         301      138              132           6 retraso     
+## # … with 336,766 more rows
+```
+
+---
+
+class: inverse, center
+
+# Ejercicio
+
+.left[
+## calcule la velocidad promedio de cada aerolínea.  
+]
+
+---
+class: inverse, center
+
+# Los terribles joins
+
+---
+class: inverse, center
+
+# Los ~~terribles joins~~
+
+---
+class: inverse, center
+
+# El Hombre Araña
+
+&lt;img src="figures/Amazing_Fantasy_15.jpg"&gt;
+
+### - Tuvo dos series de películas ANTES del Marvel Cinematic Universe.
+
+### - Cada una tuvo diferentes actores.
+
+---
+class: inverse, center
+
+
+
+```r
+spiderman_raimi &lt;- vroom::vroom(file = "data/spiderman_raimi.csv")
+```
+
+```
+## Rows: 11 Columns: 2
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: "\t"
+## chr (2): character, cast
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```r
+spiderman_amazing &lt;- vroom::vroom(file = "data/amazing_spiderman.csv")
+```
+
+```
+## Rows: 8 Columns: 2
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: "\t"
+## chr (2): character, cast
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+---
+class: inverse, center
+
+```r
+spiderman_raimi 
+```
+
+```
+## # A tibble: 11 x 2
+##    character        cast               
+##    &lt;chr&gt;            &lt;chr&gt;              
+##  1 Spider-man       Tobey Maguire      
+##  2 Mary Jane Watson Kirsten Dunst      
+##  3 Harry Osborn     James Franco       
+##  4 Tía May          Rosemary Harris    
+##  5 J. Jonah Jameson J.K. Simmons       
+##  6 Norman Osborn    Willem Dafoe       
+##  7 Doctor Octopus   Alfred Molina      
+##  8 Venom            Topher Grace       
+##  9 Sandman          Thomas Haden Church
+## 10 Gwen Stacy       Bryce Dallas Howard
+## 11 Dr. Curt Connors Dylan Baker
+```
+
+---
+class: inverse, center
+
+```r
+spiderman_amazing 
+```
+
+```
+## # A tibble: 8 x 2
+##   character        cast           
+##   &lt;chr&gt;            &lt;chr&gt;          
+## 1 Spider-man       Andrew Garfield
+## 2 Harry Osborn     Dane DeHaan    
+## 3 Tía May          Sally Field    
+## 4 Norman Osborn    Chris Cooper   
+## 5 Electro          Jamie Foxx     
+## 6 Gwen Stacy       Emma Stone     
+## 7 Rhino            Paul Giamatti  
+## 8 Dr. Curt Connors Rhys Ifans
+```
+
+--
+
+.left[
+### ¿Qué actores interpretan a cada personaje? 
+### ¿Qué personajes aparecen en la primera serie?
+### ¿Qué personajes aparecen en la segunda serie?
+### ¿Qué personajes aparecen en ambas?
+]
+
+---
+class: inverse, center, middle
+### *El problema clásico de juntar diccionarios*
+
+---
+class: inverse, center
+# Left join
+&lt;img src="figures/joins/left_join.svg"&gt;
+
+---
+class: inverse, center
+# Left join
+
+
+```r
+dplyr::left_join(x = spiderman_raimi,
+                 y = spiderman_amazing,
+                 suffix = c("_raimi", "_amazing"),
+                 by = c("character" = "character")
+                 )
+```
+
+```
+## # A tibble: 11 x 3
+##    character        cast_raimi          cast_amazing   
+##    &lt;chr&gt;            &lt;chr&gt;               &lt;chr&gt;          
+##  1 Spider-man       Tobey Maguire       Andrew Garfield
+##  2 Mary Jane Watson Kirsten Dunst       &lt;NA&gt;           
+##  3 Harry Osborn     James Franco        Dane DeHaan    
+##  4 Tía May          Rosemary Harris     Sally Field    
+##  5 J. Jonah Jameson J.K. Simmons        &lt;NA&gt;           
+##  6 Norman Osborn    Willem Dafoe        Chris Cooper   
+##  7 Doctor Octopus   Alfred Molina       &lt;NA&gt;           
+##  8 Venom            Topher Grace        &lt;NA&gt;           
+##  9 Sandman          Thomas Haden Church &lt;NA&gt;           
+## 10 Gwen Stacy       Bryce Dallas Howard Emma Stone     
+## 11 Dr. Curt Connors Dylan Baker         Rhys Ifans
+```
+
+---
+class: inverse, center
+# Right join
+&lt;img src="figures/joins/right_join.svg"&gt;
+
+---
+class: inverse, center
+# Right join
+
+
+```r
+dplyr::right_join(x = spiderman_raimi,
+                 y = spiderman_amazing,
+                 suffix = c("_raimi", "_amazing"),
+                 by = c("character" = "character")
+                 )
+```
+
+```
+## # A tibble: 8 x 3
+##   character        cast_raimi          cast_amazing   
+##   &lt;chr&gt;            &lt;chr&gt;               &lt;chr&gt;          
+## 1 Spider-man       Tobey Maguire       Andrew Garfield
+## 2 Harry Osborn     James Franco        Dane DeHaan    
+## 3 Tía May          Rosemary Harris     Sally Field    
+## 4 Norman Osborn    Willem Dafoe        Chris Cooper   
+## 5 Gwen Stacy       Bryce Dallas Howard Emma Stone     
+## 6 Dr. Curt Connors Dylan Baker         Rhys Ifans     
+## 7 Electro          &lt;NA&gt;                Jamie Foxx     
+## 8 Rhino            &lt;NA&gt;                Paul Giamatti
+```
+---
+class: inverse, center
+# semi join
+&lt;img src="figures/joins/inner_join.svg"&gt;
+
+---
+class: inverse, center
+# semi join
+
+
+```r
+dplyr::semi_join(x = spiderman_raimi,
+                 y = spiderman_amazing,
+                 suffix = c("_raimi", "_amazing"),
+                 by = c("character" = "character")
+                 )
+```
+
+```
+## # A tibble: 6 x 2
+##   character        cast               
+##   &lt;chr&gt;            &lt;chr&gt;              
+## 1 Spider-man       Tobey Maguire      
+## 2 Harry Osborn     James Franco       
+## 3 Tía May          Rosemary Harris    
+## 4 Norman Osborn    Willem Dafoe       
+## 5 Gwen Stacy       Bryce Dallas Howard
+## 6 Dr. Curt Connors Dylan Baker
+```
+---
+class: inverse, center
+# full join
+&lt;img src="figures/joins/full_join.svg"&gt;
+
+---
+class: inverse, center
+# full join
+
+```r
+dplyr::full_join(x = spiderman_raimi,
+                 y = spiderman_amazing,
+                 suffix = c("_raimi", "_amazing"),
+                 by = c("character" = "character")
+                 )
+```
+
+```
+## # A tibble: 13 x 3
+##    character        cast_raimi          cast_amazing   
+##    &lt;chr&gt;            &lt;chr&gt;               &lt;chr&gt;          
+##  1 Spider-man       Tobey Maguire       Andrew Garfield
+##  2 Mary Jane Watson Kirsten Dunst       &lt;NA&gt;           
+##  3 Harry Osborn     James Franco        Dane DeHaan    
+##  4 Tía May          Rosemary Harris     Sally Field    
+##  5 J. Jonah Jameson J.K. Simmons        &lt;NA&gt;           
+##  6 Norman Osborn    Willem Dafoe        Chris Cooper   
+##  7 Doctor Octopus   Alfred Molina       &lt;NA&gt;           
+##  8 Venom            Topher Grace        &lt;NA&gt;           
+##  9 Sandman          Thomas Haden Church &lt;NA&gt;           
+## 10 Gwen Stacy       Bryce Dallas Howard Emma Stone     
+## 11 Dr. Curt Connors Dylan Baker         Rhys Ifans     
+## 12 Electro          &lt;NA&gt;                Jamie Foxx     
+## 13 Rhino            &lt;NA&gt;                Paul Giamatti
+```
+---
+class: inverse, center
+# anti join
+&lt;img src="figures/joins/anti_join.svg"&gt;
+
+---
+class: inverse, center
+# anti join
+
+```r
+dplyr::anti_join(x = spiderman_raimi,
+                 y = spiderman_amazing,
+                 suffix = c("_raimi", "_amazing"),
+                 by = c("character" = "character")
+                 )
+```
+
+```
+## # A tibble: 5 x 2
+##   character        cast               
+##   &lt;chr&gt;            &lt;chr&gt;              
+## 1 Mary Jane Watson Kirsten Dunst      
+## 2 J. Jonah Jameson J.K. Simmons       
+## 3 Doctor Octopus   Alfred Molina      
+## 4 Venom            Topher Grace       
+## 5 Sandman          Thomas Haden Church
+```
+
+---
+class: inverse, center
+
+# Ejercicio:
+
+.left[
+# Haga el join adecuado para los datos en **data/flights.txt** y **data/airlines.txt**
+]
+
+---
+class: inverse, center, middle
+
+# Más tidying
+
+---
+class: inverse, center, middle
+
+# Veamos un plot de calificaciones 
+![](slides_03_files/figure-html/unnamed-chunk-51-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+### Es un plot feo... no es la mejor forma de presentar la información
+
+### ... pero digamos que queremos reproducirlo 
+
+-- 
+
+### La próxima semana veremos como hacerlo mejor
+---
+class: inverse, center, middle
+
+### Leamos los datos
+
+```r
+my_data &lt;- vroom::vroom("data/calificaciones_untidy.txt")
+my_data
+```
+
+```
+## # A tibble: 10 x 5
+##    student    fisica quimica matematicas biologia
+##    &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;
+##  1 STUDENT_01      6      10           5        7
+##  2 STUDENT_02      5      10           8       10
+##  3 STUDENT_03      6      10           6       10
+##  4 STUDENT_04      6       5           5        6
+##  5 STUDENT_05      6       9           8        6
+##  6 STUDENT_06      5      10          10        7
+##  7 STUDENT_07      7       7          10        6
+##  8 STUDENT_08      6      10           9        8
+##  9 STUDENT_09      7       5           7        7
+## 10 STUDENT_10      6       6           9        8
+```
+---
+class: inverse, center, middle
+
+### Hagamos el plot... 
+
+
+```r
+my_data %&gt;% 
+  ggplot() %&gt;% 
+  geom_point(mapping = aes(x = estudiante?????, 
+                           y = calificaciones?????
+                           donde pongo las materias???
+                          )
+             )
+```
+
+-- 
+
+### Los datos no están organizados para esta aplicación 
+
+--
+
+Tenemos que cambiar la *forma* de los datos = &gt; *pivotear*
+
+---
+class: inverse, center, middle
+
+# tidyr::gather
+
+
+```r
+my_data_gather &lt;-
+my_data %&gt;% 
+  gather(-"student", key = "materia", value = "calificacion")
+
+my_data_gather
+```
+
+```
+## # A tibble: 40 x 3
+##    student    materia calificacion
+##    &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+##  1 STUDENT_01 fisica             6
+##  2 STUDENT_02 fisica             5
+##  3 STUDENT_03 fisica             6
+##  4 STUDENT_04 fisica             6
+##  5 STUDENT_05 fisica             6
+##  6 STUDENT_06 fisica             5
+##  7 STUDENT_07 fisica             7
+##  8 STUDENT_08 fisica             6
+##  9 STUDENT_09 fisica             7
+## 10 STUDENT_10 fisica             6
+## # … with 30 more rows
+```
+---
+class: inverse, center, middle
+
+# tidyr::gather
+
+
+```r
+my_data_gather %&gt;% 
+  ggplot(mapping = aes(x = as_factor(student),
+                       y = calificacion,
+                       colour = as_factor(materia),
+                       )
+         ) +
+  geom_point()
+```
+---
+class: inverse, center, middle
+
+# tidyr::gather
+
+![](slides_03_files/figure-html/unnamed-chunk-56-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+### tidyr::gather no es la única manera de *pivotear* los datos
+
+### reshape2::melt
+
+### tidyr::pivot_long **en tidyr 1.0**
+
+---
+class: inverse, center, middle
+
+### reshape2::melt
+
+
+```r
+my_data_melt &lt;-
+  my_data %&gt;% 
+  reshape2::melt(variable.name = "materia", 
+                 value.name = "calificacion", 
+                 id.vars = "student")
+
+head(my_data_melt)
+```
+
+```
+##      student materia calificacion
+## 1 STUDENT_01  fisica            6
+## 2 STUDENT_02  fisica            5
+## 3 STUDENT_03  fisica            6
+## 4 STUDENT_04  fisica            6
+## 5 STUDENT_05  fisica            6
+## 6 STUDENT_06  fisica            5
+```
+
+---
+class: inverse, center, middle
+
+### tidyr::pivot_long (*SOLO DE LA VERSIÓN 1.0 DE TIDYR EN ADELANTE*)
+
+
+```r
+my_data_pivot_longer &lt;-
+  my_data %&gt;% 
+  tidyr::pivot_longer(cols = -"student", 
+                      names_to = "materia", 
+                      values_to = "calificacion")
+
+my_data_pivot_longer
+```
+
+```
+## # A tibble: 40 x 3
+##    student    materia     calificacion
+##    &lt;chr&gt;      &lt;chr&gt;              &lt;dbl&gt;
+##  1 STUDENT_01 fisica                 6
+##  2 STUDENT_01 quimica               10
+##  3 STUDENT_01 matematicas            5
+##  4 STUDENT_01 biologia               7
+##  5 STUDENT_02 fisica                 5
+##  6 STUDENT_02 quimica               10
+##  7 STUDENT_02 matematicas            8
+##  8 STUDENT_02 biologia              10
+##  9 STUDENT_03 fisica                 6
+## 10 STUDENT_03 quimica               10
+## # … with 30 more rows
+```
+
+---
+class: inverse, center
+
+# Tareas...
+
+### - Volver a la versión original de los datos ... 
+
+### Pista: 
+
+### Usar tidyr::spread, tidyr::pivot_wide, reshape2::dcast 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

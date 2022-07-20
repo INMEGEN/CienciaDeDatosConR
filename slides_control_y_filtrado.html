@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Estructuras de Control y Filtrado</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Guillermo de Anda-Jáuregui" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my_style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Estructuras de Control y Filtrado
+## Bases de programación en R
+### Guillermo de Anda-Jáuregui
+### INMEGEN
+### 18 July, 2022
+
+---
+
+
+
+
+class: my_style
+
+---
+
+class: my_style
+
+
+# .center[Sección 1:]
+
+## .center[Estructuras de Control]
+
+  * ¿Qué es una es estructura de control? 
+  
+  * ¿Para qué las necesito?
+  
+  * Estructuras tradicionales **for**, **if**
+    
+    * Alternativas en R: La familia **apply** e **ifelse**
+  
+---
+
+class: my_style2
+
+# .center[El ejemplo]
+
+Tengo datos de glucosa en sangre ( `\(mg/dL\)` ) Quiero programar un sistema que me alerte de niveles de azúcar altos ( `\(&gt;100 mg/dL\)` )
+
+
+```r
+x = mi_glucosa
+```
+
+
+**SI** mi glucosa es **mayor** a cien ( `\(mi\_glucosa &gt;= 100\)` ),  quiero una **ALERTA**
+**DE OTRA FORMA,** quiero que me diga que todo está bien.
+
+---
+
+.center[![an image](rBio/glucosa_01.png)]
+
+---
+
+class: my_style2
+
+# .center[if]
+
+**if** es una *estructura de control condicional* que nos permite tomar una decisión dada una condición lógica
+
+* Igualdad o desigualdad: *==*, *!=* 
+* Mayor/menor: *&gt;*, *&lt;*, *&lt;=*, *&gt;=*
+* Pertenencia: *%in%*
+* Negación: *!*
+
+
+
+```r
+mi_glucosa = 200 
+
+if(mi_glucosa &gt;= 100){
+  print("ALERTA")
+  }
+```
+
+```
+## [1] "ALERTA"
+```
+---
+
+class: my_style2
+Notar la sintaxis: 
+
+
+```r
+if(**MI EVALUACION LOGICA**){
+  dentro de llaves lo que quiero que pase si mi evaluación lógica es CIERTA
+}
+```
+
+Ahora probemos el caso en el que la glucosa no excede mi umbral 
+
+```r
+mi_glucosa = 80 
+
+if(mi_glucosa &gt;= 100){
+  print("ALERTA")
+  }
+```
+
+# .center[NO PASA NADA!?]
+---
+
+class: my_style2
+
+# .center[else: la compañera de if]
+
+Usamos **else** para definir lo que queremos que pase si la evaluación es **NEGATIVA** 
+
+
+
+```r
+mi_glucosa = 80 
+
+if(mi_glucosa &gt;= 100){
+  print("ALERTA")
+}else{
+    print("¡Todo está bien! =)")
+  }
+```
+
+```
+## [1] "¡Todo está bien! =)"
+```
+---
+
+## .center[Pongamos un poco más de complicación]
+
+.center[![an image](rBio/glucosa_02.png)]
+
+---
+class: my_style2
+
+
+```r
+mi_glucosa = 80 
+
+if(mi_glucosa &gt; 100){
+  if(mi_glucosa &gt; 126){
+  print("¡¡¡¡ALARMA!!!!")
+    }else{print("ALERTA")}
+}else{
+    print("¡Todo está bien! =)")
+  }
+```
+
+```
+## [1] "¡Todo está bien! =)"
+```
+
+---
+class: my_style2
+
+
+```r
+mi_glucosa = 125 
+
+if(mi_glucosa &gt;= 100){
+  if(mi_glucosa &gt; 126){
+  print("¡¡¡¡ALARMA!!!!")
+    }else{print("ALERTA")}
+}else{
+    print("¡Todo está bien! =)")
+  }
+```
+
+```
+## [1] "ALERTA"
+```
+
+---
+class: my_style2
+
+
+```r
+mi_glucosa = 215 
+
+if(mi_glucosa &gt;= 100){
+  if(mi_glucosa &gt; 126){
+  print("¡¡¡¡ALARMA!!!!")
+    }else{print("ALERTA")}
+}else{
+    print("¡Todo está bien! =)")
+  }
+```
+
+```
+## [1] "¡¡¡¡ALARMA!!!!"
+```
+
+---
+class: my_style2
+
+## .center[Escenario 2]
+
+tenemos ahora 100 mediciones de glucosa, y queremos clasificarlos a todos en "no diabético", "riesgo", y "diabetes"
+
+
+```r
+set.seed(725) #asegura que mi "aleatorio" sea reproducible
+mis_lecturas &lt;- runif(n = 100, min = 50, max = 300)
+mis_lecturas &lt;- round(mis_lecturas)
+mis_lecturas
+```
+
+```
+##   [1] 116  91 133  97 120  89 157 103 159 123 272 265 268  77 233 278 158 290
+##  [19]  82 107  87 191 115  82 216 296 296 231 153 228 170 275 264 104 117 158
+##  [37] 132 184 157 214  53 269 255 109  82 289  91 282 245 172 165  75 125 137
+##  [55]  92 150 230 202  81  61  91 228 287  96 151 132 283 278 161 267 242 266
+##  [73] 250 111 127 211  96 100 229 255 163 178 188 231 285 149 288 105  60 271
+##  [91] 100  65 187 126 225  78  72 247 231 243
+```
+
+
+---
+class: my_style2
+
+# .center[el **For** loop]
+
+Un **for** loop (o ciclo **for**) es una estructura de control que nos permite *iterar.* En R, esto usualmente significa *"caminar"* sobre cada elemento de un objeto. 
+
+Por ejemplo, si queremos decir *para cada elemento del 1 al 10, imprime ese elemento*
+
+```r
+for(i in 1:10){
+  print(i)
+}
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+```
+
+---
+class: my_style2
+
+## .center[el **For** loop]
+
+Un **for** loop (o ciclo **for**) es una estructura de control que nos permite *iterar.* En R, esto usualmente significa *"caminar"* sobre cada elemento de un objeto. 
+
+Podríamos querer imprimir las letras del alfabeto, una a la vez
+
+```r
+for(i in letters){
+  print(i)
+}
+```
+
+```
+## [1] "a"
+## [1] "b"
+## [1] "c"
+## [1] "d"
+## [1] "e"
+## [1] "f"
+## [1] "g"
+## [1] "h"
+## [1] "i"
+## [1] "j"
+## [1] "k"
+## [1] "l"
+## [1] "m"
+## [1] "n"
+## [1] "o"
+## [1] "p"
+## [1] "q"
+## [1] "r"
+## [1] "s"
+## [1] "t"
+## [1] "u"
+## [1] "v"
+## [1] "w"
+## [1] "x"
+## [1] "y"
+## [1] "z"
+```
+
+---
+class: my_style2
+
+### .center[el **For** loop]
+
+Podríamos querer etiquetar nuestras muestras... 
+
+```r
+for(i in 1:9){
+  print(paste0("Muestra ", i))
+}
+```
+
+```
+## [1] "Muestra 1"
+## [1] "Muestra 2"
+## [1] "Muestra 3"
+## [1] "Muestra 4"
+## [1] "Muestra 5"
+## [1] "Muestra 6"
+## [1] "Muestra 7"
+## [1] "Muestra 8"
+## [1] "Muestra 9"
+```
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema]
+
+tenemos ahora 100 mediciones de glucosa, y queremos clasificarlos a todos en "no diabético", "riesgo", y "diabetes"
+
+
+```r
+for(i in mis_lecturas){
+  mi_glucosa = i 
+
+if(mi_glucosa &gt;= 100){
+  if(mi_glucosa &gt; 126){
+  print("diabetes")
+    }else{print("riesgo")}
+}else{
+    print("no diabético")
+  }
+  
+}
+```
+
+```
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "no diabético"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "no diabético"
+## [1] "no diabético"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+```
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema]
+
+tenemos ahora 100 mediciones de glucosa, y queremos clasificarlos a todos en "no diabético", "riesgo", y "diabetes"
+
+
+```r
+for(i in mis_lecturas){
+  mi_glucosa = i 
+
+if(mi_glucosa &gt;= 100){
+  if(mi_glucosa &gt; 126){
+  print("diabetes")
+    }else{print("riesgo")}
+}else{
+    print("no diabético")
+  }
+  
+}
+```
+
+Resolvimos el problema... pero podemos hacerlo mejor
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+##### Mejora Número 1:
+Podemos definir una función para hacer nuestras evaluaciones.
+Una ventaja de esto es que vamos a tener un *resultado*, no solo *imprimir* las cosas en pantalla. 
+
+
+```r
+funcion_diabetes &lt;- function(gluc){
+
+if(gluc &gt;= 100){
+  if(gluc &gt; 126){
+    return("diabetes")
+  }else{
+      return("riesgo")
+    }
+  }else{
+    return("no diabético")
+  }
+}
+
+funcion_diabetes(121)
+```
+
+```
+## [1] "riesgo"
+```
+
+---
+.center[![an image](rBio/yoda2.png)]
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+
+```r
+funcion_diabetes &lt;- function(gluc){
+
+    if(gluc &lt; 100){
+      return("no diabetes")
+    }
+    
+    if(100 &lt;= gluc &amp; gluc &lt;= 126){
+      return("riesgo")
+    }
+  
+    if(gluc &gt; 126){
+      return("diabetes")
+    }
+  
+  }
+
+funcion_diabetes(99)
+```
+
+```
+## [1] "no diabetes"
+```
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+
+```r
+for(i in mis_lecturas){
+  funcion_diabetes(i)
+}
+```
+--
+
+¡No veo nada!
+
+--
+
+Le voy a meter una asignación y la voy a imprimir
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+
+```r
+for(i in mis_lecturas){
+  mi_resultado &lt;- funcion_diabetes(i)
+  print(mi_resultado)
+}
+```
+
+```
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "no diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "riesgo"
+## [1] "diabetes"
+## [1] "no diabetes"
+## [1] "no diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+## [1] "diabetes"
+```
+
+--- 
+
+!
+
+---
+
+class: my_style2
+
+y mi_resultado, quedó en el ambiente? que valor tiene? 
+
+
+```r
+mi_resultado
+```
+
+```
+## [1] "diabetes"
+```
+
+
+```r
+mis_lecturas[100]
+```
+
+```
+## [1] 243
+```
+
+
+--
+
+Solo quedó guardado mi_resultado para el último valor... 
+
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+##### Mejora Número 2:
+Asignemos nuestros resultados a un vector
+
+
+```r
+mis_resultados &lt;- character()
+mis_resultados
+```
+
+```
+## character(0)
+```
+
+```r
+for(i in mis_lecturas){
+  mi_resultado   &lt;- funcion_diabetes(i)
+  mis_resultados &lt;- c(mis_resultados, mi_resultado)
+}
+
+length(mis_resultados)
+```
+
+```
+## [1] 100
+```
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+##### Mejora Número 3:
+Podríamos hacer un *data frame* para guardar nuestros resultados... 
+
+
+```r
+mi_df &lt;- data.frame(lecturas = mis_lecturas,
+                    clasific = mis_resultados)
+
+head(mi_df)
+```
+
+```
+##   lecturas    clasific
+## 1      116      riesgo
+## 2       91 no diabetes
+## 3      133    diabetes
+## 4       97 no diabetes
+## 5      120      riesgo
+## 6       89 no diabetes
+```
+
+---
+class: my_style2
+
+### .center[resolvamos nuestro problema... mejor]
+
+##### Mejora Número 3:
+Podríamos hacer un *data frame* para guardar nuestros resultados... 
+Podríamos ponerle un identificador a ese data frame de la forma "Muestra X" 
+
+-- 
+
+Sabemos que tenemos 100 muestras... pero, ¿si no lo supiéramos, o el número pudiera variar?
+
+--
+
+Usemos *seq_along*
+
+---
+class: my_style2
+
+## .center[seq_along]
+
+*seq_along* nos regresa una secuencia de valores de 1 a la longitud de un vector 
+
+
+```r
+seq_along(mis_resultados)
+```
+
+```
+##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
+##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
+##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+##  [91]  91  92  93  94  95  96  97  98  99 100
+```
+
+
+---
+class: my_style2
+
+
+```r
+mis_muestras &lt;- character()
+for(i in seq_along(mis_resultados)){
+  mi_muestra &lt;- paste0("Muestra ", i)
+  mis_muestras &lt;- c(mis_muestras, mi_muestra)
+}
+
+mi_df &lt;- data.frame(muestra  = mis_muestras,
+                    lecturas = mis_lecturas,
+                    clasific = mis_resultados)
+
+head(x = mi_df, n = 10)
+```
+
+```
+##       muestra lecturas    clasific
+## 1   Muestra 1      116      riesgo
+## 2   Muestra 2       91 no diabetes
+## 3   Muestra 3      133    diabetes
+## 4   Muestra 4       97 no diabetes
+## 5   Muestra 5      120      riesgo
+## 6   Muestra 6       89 no diabetes
+## 7   Muestra 7      157    diabetes
+## 8   Muestra 8      103      riesgo
+## 9   Muestra 9      159    diabetes
+## 10 Muestra 10      123      riesgo
+```
+
+---
+class: my_style2
+
+# .center[Ejercicio]
+
+Estas son tecnologías genómicas disponibles en el INMEGEN:
+
+
+```r
+mis_genomicas &lt;- c("genomics", 
+                   "proteomics", 
+                   "transcriptomics", 
+                   "lipidomics", 
+                   "metabolomics")
+```
+
+Y estas son las tecnologías que no se encuentran disponibles en este momento por mantenimiento:
+
+
+```r
+mi_mantenimiento &lt;- c("metabolomics", "lipidomics")
+```
+
+---
+class: my_style2
+
+# .center[Ejercicio]
+
+Le han solicitado, para colaboraciones externas, los siguientes estudios:
+
+
+```r
+mis_colabs &lt;- c("genomics",
+                "genomics",
+                "proteomics", 
+                "microscopy", 
+                "fRMI",
+                "fRMI",
+                "lipidomics",
+                "HPLC",
+                "metabolomics",
+                "fluidomics",
+                "proteomics",
+                "a cake",
+                "transposomics",
+                "metagenomics",
+                "cellomics",
+                "microscopy",
+                "genomics",
+                "genomics",
+                "proteomics")
+```
+
+---
+class: my_style2
+
+# .center[Ejercicio]
+
+Responda a quienes le han solicitado colaborar, si puede o no realizar la técnica en su instituto, y de ser posible, si la puede realizar en este momento. 
+
+--
+
+## Pistas:
+
+* No olvide el operador *%in%* de pertenencia. 
+* Puede usar un dibujo de su árbol de decisiones, para establecer que condiciones lógicas evaluar.
+* Puede escribir una función.
+
+---
+class: my_style2
+
+# .center[Ejercicio]
+
+### 15 minutos
+
+--
+
+## 5 minutos
+
+--
+
+# 1 minuto
+
+---
+class: my_style2
+
+---
+class: my_style2
+
+# Los *for loops...* 
+
+* ### Son muy populares en otros lenguajes de programación (como Python y C) 
+* ### Son muy intuitivos...
+
+--
+
+# .center[¡Pero no son la forma R de hacer las cosas!]
+
+---
+class: my_style2
+
+# .center[La familia *apply*]
+
+Las funciones de la familia *apply* permiten iterar sobre *vectores,* **aplicando** una misma función a cada elemento del vector.
+
+
+```r
+df = data.frame(observacion_1 = 1:4,
+                observacion_2 = -2*(1:4),
+                observacion_3 = 4.5
+                )
+
+df
+```
+
+```
+##   observacion_1 observacion_2 observacion_3
+## 1             1            -2           4.5
+## 2             2            -4           4.5
+## 3             3            -6           4.5
+## 4             4            -8           4.5
+```
+
+```r
+apply(df, MARGIN = 1, FUN = mean) #saca el promedio por renglón
+```
+
+```
+## [1] 1.1666667 0.8333333 0.5000000 0.1666667
+```
+
+---
+class: my_style2
+
+# .center[*sapply*]
+
+*sapply* es la función más sencilla: toma un vector, y regresa el resultado de aplicar la función *f* a cada elemento *i* del vector, en un vector de igual forma que el original, si es posible, o a la representación más sencilla (si no).
+
+Resolvamos nuestro problema de clasificar por glucosa en sangre usando *sapply*
+
+
+```r
+mis_nuevos_resultados &lt;- sapply(X = mis_lecturas, 
+                                FUN = funcion_diabetes)
+
+head(mis_nuevos_resultados)
+```
+
+```
+## [1] "riesgo"      "no diabetes" "diabetes"    "no diabetes" "riesgo"     
+## [6] "no diabetes"
+```
+
+```r
+length(mis_nuevos_resultados)
+```
+
+```
+## [1] 100
+```
+
+---
+class: my_style2
+
+# .center[*sapply*]
+
+¿Son los mismos resultados que con mi ciclo *for*? 
+
+```r
+all(mis_nuevos_resultados==mis_resultados)
+```
+
+```
+## [1] TRUE
+```
+
+---
+class: my_style2
+
+# .center[*sapply*]
+
+Notar que si yo le paso un vector con nombres, mis resultados regresan con nombres (lo que es fantástico para no perderme)
+
+
+```r
+names(mis_lecturas) &lt;- mis_muestras
+
+mis_nuevos_resultados &lt;- sapply(X = mis_lecturas, 
+                                FUN = funcion_diabetes)
+
+head(mis_nuevos_resultados)
+```
+
+```
+##     Muestra 1     Muestra 2     Muestra 3     Muestra 4     Muestra 5 
+##      "riesgo" "no diabetes"    "diabetes" "no diabetes"      "riesgo" 
+##     Muestra 6 
+## "no diabetes"
+```
+
+
+---
+class: my_style2
+
+# .center[*sapply*]
+
+Puedo usar *funciones anónimas* con cualquiera de las funciones de la familia *apply*, como *sapply*.
+
+
+```r
+mis_nuevos_nombres &lt;- sapply(X = seq_along(mis_lecturas), 
+                             FUN = function(i){
+  paste0("Muestra ", i)
+})
+
+head(mis_nuevos_nombres, n = 5)
+```
+
+```
+## [1] "Muestra 1" "Muestra 2" "Muestra 3" "Muestra 4" "Muestra 5"
+```
+
+---
+class: my_style2
+
+# .center[*lapply*]
+
+*lapply* devuelve **siempre** una lista, lo que es muy práctico si quiero guardar cosas de manera asimétrica
+
+Imaginemos un experimento donde se midieron concentraciones de la proteína XYZ durante tres días, en diez cultivos
+
+
+```r
+set.seed(725)
+observaciones_df &lt;- data.frame(dia_1 = round(runif(10, min = 50, max = 100)), 
+                               #muestreo aleatorio de valores entre 50 y 100, 
+                               #redondeados 
+                               dia_2 = round(runif(10, min = 50, max = 100)),
+                               dia_3 = round(runif(10, min = 50, max = 100)), 
+                               row.names = paste0("Cultivo_", 
+                                                  LETTERS[1:10]
+                                                  )  #nombres de mis lecturas
+                               )
+```
+
+---
+class: my_style2
+
+# .center[*lapply*]
+
+Quiero sacar el valor máximo, mínimo, y medio por día.
+
+--
+
+Por default, lapply va a iterar sobre columnas de un data.frame (esto tiene que ver con que un data.frame es en realidad una lista...)
+
+--
+
+
+```r
+mis_valores_por_dia &lt;- lapply(X = observaciones_df, 
+                              FUN = function(i){
+                                my_result = list(minimo = min(i),
+                                                 media  = mean(i),
+                                                 maxima = max(i)
+                                )
+                              })
+```
+---
+class: my_style2
+
+# .center[*apply*]
+
+* Usando *apply* puedo resolver el problema para iterar sobre renglones; también funciona sobre columnas.
+* *apply* tiene el argumento *MARGINS* que me indica sobre que quiero iterar: 1 sobre renglones, 2 sobre columnas.
+
+
+```r
+mis_valores_por_cultivo &lt;- 
+  apply(X = observaciones_df, 
+        MARGIN = 1, 
+        FUN = function(i){
+                          my_result = list(minimo = min(i),
+                                           media  = mean(i),
+                                           maxima = max(i)
+                                )
+                              }
+        )
+```
+
+---
+class: my_style2
+
+# .center[*apply*]
+
+```r
+mis_valores_por_cultivo[7:8]
+```
+
+```
+## $Cultivo_G
+## $Cultivo_G$minimo
+## [1] 71
+## 
+## $Cultivo_G$media
+## [1] 80.66667
+## 
+## $Cultivo_G$maxima
+## [1] 99
+## 
+## 
+## $Cultivo_H
+## $Cultivo_H$minimo
+## [1] 61
+## 
+## $Cultivo_H$media
+## [1] 81.66667
+## 
+## $Cultivo_H$maxima
+## [1] 98
+```
+
+---
+class: my_style2
+
+# .center[*while*]
+
+*while* es otro elemento de control de flujo que nos permite iterar hasta que se cumpla una condición. 
+
+Ejemplo: Puedo trabajar en 20 cosas a la vez; máximo 22. Diariamente me proponen entre 1 y 3 proyectos. 
+
+
+```r
+my_jobs &lt;- 0
+my_iters   &lt;- 0
+set.seed(725)
+
+while(my_jobs &lt; 20){
+  my_add &lt;- sample(1:3, 1)
+  my_jobs &lt;- my_jobs + my_add
+  my_iters &lt;- my_iters +1 
+}
+```
+
+---
+class: my_style2
+
+# .center[*while*]
+
+```r
+my_jobs
+```
+
+```
+## [1] 21
+```
+
+```r
+my_iters
+```
+
+```
+## [1] 11
+```
+
+### Reto:
+Cómo le hago para aceptar EXACTAMENTE 20 jobs
+
+*Pista: un condicional podría ser útil para aceptar menos trabajos cuando me acerco a 20...
+
+---
+class: my_style2
+
+
+```r
+my_jobs &lt;- 0
+my_iters   &lt;- 0
+set.seed(725)
+
+while(my_jobs &lt; 20){
+  
+  if(my_jobs == 19){
+    my_add &lt;- 1
+  }
+  
+  if(my_jobs == 18){
+  my_add &lt;- sample(1:2, 1)
+  }
+   
+  if(my_jobs &lt; 18){
+  my_add &lt;- sample(1:3, 1)
+  } 
+  
+  my_jobs &lt;- my_jobs + my_add
+  my_iters &lt;- my_iters +1
+  }
+
+my_jobs
+```
+
+```
+## [1] 20
+```
+
+```r
+my_iters
+```
+
+```
+## [1] 12
+```
+
+---
+class: my_style2
+
+# .center[ciclos anidados]
+
+Así como anidamos condicionales, podemos anidar ciclos for, o funciones apply
+
+```r
+for(i in letters[1:3]){
+  for(j in 1:3){
+    print(paste0(i,j))
+  }
+}
+```
+
+```
+## [1] "a1"
+## [1] "a2"
+## [1] "a3"
+## [1] "b1"
+## [1] "b2"
+## [1] "b3"
+## [1] "c1"
+## [1] "c2"
+## [1] "c3"
+```
+
+---
+class: my_style2
+
+# .center[ciclos anidados]
+
+Así como anidamos condicionales, podemos anidar ciclos for, o funciones apply
+
+
+```r
+sapply(X = letters[1:3], FUN = function(i){
+  sapply(X = 1:3, FUN = function(j){
+    paste0(i,j)
+  })
+})
+```
+
+```
+##      a    b    c   
+## [1,] "a1" "b1" "c1"
+## [2,] "a2" "b2" "c2"
+## [3,] "a3" "b3" "c3"
+```
+
+--
+
+### ¡MUCHO CUIDADO CON LOS DOBLES CICLOS!
+
+---
+class: my_style2
+
+# .center[¡MUCHO CUIDADO CON LOS DOBLES CICLOS!]
+
+* Elevan *EXPONENCIALMENTE* su tiempo de cómputo.
+* Si cada iteración les toma 1 segundo... 5615 al cuadrado les tomaría un año de cómputo... 
+---
+class: my_style2
+
+¿Hay alguna forma de hacer mis evaluaciones if/else más como la gente *cool* de R?
+
+---
+class: my_style2
+
+# .center[*ifelse*]
+
+**ifelse** es una versión *vectorizada* de una evaluación if/else. Para cada elemento de un vector, evalua una condición y devuelve un resultado dado el resultado de la evaluación. 
+
+
+```r
+mis_colabs%in%mis_genomicas
+```
+
+```
+##  [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE
+## [13] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+```
+
+---
+class: my_style2
+
+# .center[*ifelse*]
+
+
+```r
+mis_respuestas &lt;- 
+ifelse(test = mis_colabs%in%mis_genomicas, #mi evaluación
+       yes = "puedo hacerlo", #que devuelvo si es TRUE
+       no = "No puedo"  #que devuelvo si es falso
+      )
+
+mis_respuestas
+```
+
+```
+##  [1] "puedo hacerlo" "puedo hacerlo" "puedo hacerlo" "No puedo"     
+##  [5] "No puedo"      "No puedo"      "puedo hacerlo" "No puedo"     
+##  [9] "puedo hacerlo" "No puedo"      "puedo hacerlo" "No puedo"     
+## [13] "No puedo"      "No puedo"      "No puedo"      "No puedo"     
+## [17] "puedo hacerlo" "puedo hacerlo" "puedo hacerlo"
+```
+
+
+---
+
+class: my_style
+
+
+# .center[Sección 2:]
+
+## .center[Filtado de datos]
+
+  * ¿Cómo filtro mis datos?
+  
+    * En R base
+    
+    * Usando *dplyr*
+  
+  
+
+---
+class: my_style2
+
+
+```r
+mis_colabs%in%mis_genomicas
+```
+
+```
+##  [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE
+## [13] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+```
+
+Quiero seleccionar las que si puedo hacer (las que si están)
+
+---
+class: my_style2
+# .center[Subsetting]
+
+* Puedo hacer *subsets* (subconjuntos) de mis datos basados en evaluaciones lógicas. 
+* Normalmente para ello uso el operador *[]*
+
+
+```r
+mis_colabs[mis_colabs%in%mis_genomicas]
+```
+
+```
+## [1] "genomics"     "genomics"     "proteomics"   "lipidomics"   "metabolomics"
+## [6] "proteomics"   "genomics"     "genomics"     "proteomics"
+```
+
+Recupero solo las que son TRUE.
+
+---
+class: my_style2
+# .center[*which*]
+
+*which* me permite obtener la *posición* en el vector de los elementos que fueron TRUE
+
+
+```r
+which(mis_colabs%in%mis_genomicas)
+```
+
+```
+## [1]  1  2  3  7  9 11 17 18 19
+```
+
+Esto puede ser muy útil si tengo evaluaciones lógicas complejas, o si quiero reciclar mi evaluación de un vector con otro... 
+---
+class: my_style2
+
+# .center[Filtrado de tablas]
+
+Un caso de uso muy común es querer filtrar tablas. Retomemos la tabla donde pusimos la clasificación de nuestras muestras basado en sus niveles de glucosa en sangre. 
+
+
+```r
+head(mi_df)
+```
+
+```
+##     muestra lecturas    clasific
+## 1 Muestra 1      116      riesgo
+## 2 Muestra 2       91 no diabetes
+## 3 Muestra 3      133    diabetes
+## 4 Muestra 4       97 no diabetes
+## 5 Muestra 5      120      riesgo
+## 6 Muestra 6       89 no diabetes
+```
+
+Quiero quedarme solo con aquellos que tienen diabetes
+
+---
+class: my_style2
+
+# .center[Filtrado de tablas]
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasific=="diabetes")
+mi_df[mis_diabetes,]
+```
+
+```
+##         muestra lecturas clasific
+## 3     Muestra 3      133 diabetes
+## 7     Muestra 7      157 diabetes
+## 9     Muestra 9      159 diabetes
+## 11   Muestra 11      272 diabetes
+## 12   Muestra 12      265 diabetes
+## 13   Muestra 13      268 diabetes
+## 15   Muestra 15      233 diabetes
+## 16   Muestra 16      278 diabetes
+## 17   Muestra 17      158 diabetes
+## 18   Muestra 18      290 diabetes
+## 22   Muestra 22      191 diabetes
+## 25   Muestra 25      216 diabetes
+## 26   Muestra 26      296 diabetes
+## 27   Muestra 27      296 diabetes
+## 28   Muestra 28      231 diabetes
+## 29   Muestra 29      153 diabetes
+## 30   Muestra 30      228 diabetes
+## 31   Muestra 31      170 diabetes
+## 32   Muestra 32      275 diabetes
+## 33   Muestra 33      264 diabetes
+## 36   Muestra 36      158 diabetes
+## 37   Muestra 37      132 diabetes
+## 38   Muestra 38      184 diabetes
+## 39   Muestra 39      157 diabetes
+## 40   Muestra 40      214 diabetes
+## 42   Muestra 42      269 diabetes
+## 43   Muestra 43      255 diabetes
+## 46   Muestra 46      289 diabetes
+## 48   Muestra 48      282 diabetes
+## 49   Muestra 49      245 diabetes
+## 50   Muestra 50      172 diabetes
+## 51   Muestra 51      165 diabetes
+## 54   Muestra 54      137 diabetes
+## 56   Muestra 56      150 diabetes
+## 57   Muestra 57      230 diabetes
+## 58   Muestra 58      202 diabetes
+## 62   Muestra 62      228 diabetes
+## 63   Muestra 63      287 diabetes
+## 65   Muestra 65      151 diabetes
+## 66   Muestra 66      132 diabetes
+## 67   Muestra 67      283 diabetes
+## 68   Muestra 68      278 diabetes
+## 69   Muestra 69      161 diabetes
+## 70   Muestra 70      267 diabetes
+## 71   Muestra 71      242 diabetes
+## 72   Muestra 72      266 diabetes
+## 73   Muestra 73      250 diabetes
+## 75   Muestra 75      127 diabetes
+## 76   Muestra 76      211 diabetes
+## 79   Muestra 79      229 diabetes
+## 80   Muestra 80      255 diabetes
+## 81   Muestra 81      163 diabetes
+## 82   Muestra 82      178 diabetes
+## 83   Muestra 83      188 diabetes
+## 84   Muestra 84      231 diabetes
+## 85   Muestra 85      285 diabetes
+## 86   Muestra 86      149 diabetes
+## 87   Muestra 87      288 diabetes
+## 90   Muestra 90      271 diabetes
+## 93   Muestra 93      187 diabetes
+## 95   Muestra 95      225 diabetes
+## 98   Muestra 98      247 diabetes
+## 99   Muestra 99      231 diabetes
+## 100 Muestra 100      243 diabetes
+```
+
+---
+class: my_style2
+
+# .center[Filtrado de tablas]
+
+
+```r
+mis_low &lt;- which(mi_df$lecturas &lt; 70)
+mi_df[mis_low,]
+```
+
+```
+##       muestra lecturas    clasific
+## 41 Muestra 41       53 no diabetes
+## 60 Muestra 60       61 no diabetes
+## 89 Muestra 89       60 no diabetes
+## 92 Muestra 92       65 no diabetes
+```
+
+
+---
+class: my_style2
+
+# .center[Selección de columnas]
+
+Quiero ver los niveles de quienes tienen diabetes. No quiero mostrar la columna de clasificación.
+
+Opcion 1: 
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasific=="diabetes")
+mi_df[mis_diabetes, 1:2]
+```
+
+```
+##         muestra lecturas
+## 3     Muestra 3      133
+## 7     Muestra 7      157
+## 9     Muestra 9      159
+## 11   Muestra 11      272
+## 12   Muestra 12      265
+## 13   Muestra 13      268
+## 15   Muestra 15      233
+## 16   Muestra 16      278
+## 17   Muestra 17      158
+## 18   Muestra 18      290
+## 22   Muestra 22      191
+## 25   Muestra 25      216
+## 26   Muestra 26      296
+## 27   Muestra 27      296
+## 28   Muestra 28      231
+## 29   Muestra 29      153
+## 30   Muestra 30      228
+## 31   Muestra 31      170
+## 32   Muestra 32      275
+## 33   Muestra 33      264
+## 36   Muestra 36      158
+## 37   Muestra 37      132
+## 38   Muestra 38      184
+## 39   Muestra 39      157
+## 40   Muestra 40      214
+## 42   Muestra 42      269
+## 43   Muestra 43      255
+## 46   Muestra 46      289
+## 48   Muestra 48      282
+## 49   Muestra 49      245
+## 50   Muestra 50      172
+## 51   Muestra 51      165
+## 54   Muestra 54      137
+## 56   Muestra 56      150
+## 57   Muestra 57      230
+## 58   Muestra 58      202
+## 62   Muestra 62      228
+## 63   Muestra 63      287
+## 65   Muestra 65      151
+## 66   Muestra 66      132
+## 67   Muestra 67      283
+## 68   Muestra 68      278
+## 69   Muestra 69      161
+## 70   Muestra 70      267
+## 71   Muestra 71      242
+## 72   Muestra 72      266
+## 73   Muestra 73      250
+## 75   Muestra 75      127
+## 76   Muestra 76      211
+## 79   Muestra 79      229
+## 80   Muestra 80      255
+## 81   Muestra 81      163
+## 82   Muestra 82      178
+## 83   Muestra 83      188
+## 84   Muestra 84      231
+## 85   Muestra 85      285
+## 86   Muestra 86      149
+## 87   Muestra 87      288
+## 90   Muestra 90      271
+## 93   Muestra 93      187
+## 95   Muestra 95      225
+## 98   Muestra 98      247
+## 99   Muestra 99      231
+## 100 Muestra 100      243
+```
+
+---
+class: my_style2
+
+# .center[Selección de columnas]
+
+Quiero ver los niveles de quienes tienen diabetes. No quiero mostrar la columna de clasificación.
+
+Opcion 2:
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasific=="diabetes")
+mi_df[mis_diabetes, c("muestra", "lecturas")]
+```
+
+```
+##         muestra lecturas
+## 3     Muestra 3      133
+## 7     Muestra 7      157
+## 9     Muestra 9      159
+## 11   Muestra 11      272
+## 12   Muestra 12      265
+## 13   Muestra 13      268
+## 15   Muestra 15      233
+## 16   Muestra 16      278
+## 17   Muestra 17      158
+## 18   Muestra 18      290
+## 22   Muestra 22      191
+## 25   Muestra 25      216
+## 26   Muestra 26      296
+## 27   Muestra 27      296
+## 28   Muestra 28      231
+## 29   Muestra 29      153
+## 30   Muestra 30      228
+## 31   Muestra 31      170
+## 32   Muestra 32      275
+## 33   Muestra 33      264
+## 36   Muestra 36      158
+## 37   Muestra 37      132
+## 38   Muestra 38      184
+## 39   Muestra 39      157
+## 40   Muestra 40      214
+## 42   Muestra 42      269
+## 43   Muestra 43      255
+## 46   Muestra 46      289
+## 48   Muestra 48      282
+## 49   Muestra 49      245
+## 50   Muestra 50      172
+## 51   Muestra 51      165
+## 54   Muestra 54      137
+## 56   Muestra 56      150
+## 57   Muestra 57      230
+## 58   Muestra 58      202
+## 62   Muestra 62      228
+## 63   Muestra 63      287
+## 65   Muestra 65      151
+## 66   Muestra 66      132
+## 67   Muestra 67      283
+## 68   Muestra 68      278
+## 69   Muestra 69      161
+## 70   Muestra 70      267
+## 71   Muestra 71      242
+## 72   Muestra 72      266
+## 73   Muestra 73      250
+## 75   Muestra 75      127
+## 76   Muestra 76      211
+## 79   Muestra 79      229
+## 80   Muestra 80      255
+## 81   Muestra 81      163
+## 82   Muestra 82      178
+## 83   Muestra 83      188
+## 84   Muestra 84      231
+## 85   Muestra 85      285
+## 86   Muestra 86      149
+## 87   Muestra 87      288
+## 90   Muestra 90      271
+## 93   Muestra 93      187
+## 95   Muestra 95      225
+## 98   Muestra 98      247
+## 99   Muestra 99      231
+## 100 Muestra 100      243
+```
+---
+class: my_style2
+
+# .center[Selección de columnas]
+
+Quiero ver los niveles de quienes tienen diabetes. No quiero mostrar la columna de clasificación.
+
+Opcion 3:
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasific=="diabetes")
+mi_df[mis_diabetes, -3]
+```
+
+```
+##         muestra lecturas
+## 3     Muestra 3      133
+## 7     Muestra 7      157
+## 9     Muestra 9      159
+## 11   Muestra 11      272
+## 12   Muestra 12      265
+## 13   Muestra 13      268
+## 15   Muestra 15      233
+## 16   Muestra 16      278
+## 17   Muestra 17      158
+## 18   Muestra 18      290
+## 22   Muestra 22      191
+## 25   Muestra 25      216
+## 26   Muestra 26      296
+## 27   Muestra 27      296
+## 28   Muestra 28      231
+## 29   Muestra 29      153
+## 30   Muestra 30      228
+## 31   Muestra 31      170
+## 32   Muestra 32      275
+## 33   Muestra 33      264
+## 36   Muestra 36      158
+## 37   Muestra 37      132
+## 38   Muestra 38      184
+## 39   Muestra 39      157
+## 40   Muestra 40      214
+## 42   Muestra 42      269
+## 43   Muestra 43      255
+## 46   Muestra 46      289
+## 48   Muestra 48      282
+## 49   Muestra 49      245
+## 50   Muestra 50      172
+## 51   Muestra 51      165
+## 54   Muestra 54      137
+## 56   Muestra 56      150
+## 57   Muestra 57      230
+## 58   Muestra 58      202
+## 62   Muestra 62      228
+## 63   Muestra 63      287
+## 65   Muestra 65      151
+## 66   Muestra 66      132
+## 67   Muestra 67      283
+## 68   Muestra 68      278
+## 69   Muestra 69      161
+## 70   Muestra 70      267
+## 71   Muestra 71      242
+## 72   Muestra 72      266
+## 73   Muestra 73      250
+## 75   Muestra 75      127
+## 76   Muestra 76      211
+## 79   Muestra 79      229
+## 80   Muestra 80      255
+## 81   Muestra 81      163
+## 82   Muestra 82      178
+## 83   Muestra 83      188
+## 84   Muestra 84      231
+## 85   Muestra 85      285
+## 86   Muestra 86      149
+## 87   Muestra 87      288
+## 90   Muestra 90      271
+## 93   Muestra 93      187
+## 95   Muestra 95      225
+## 98   Muestra 98      247
+## 99   Muestra 99      231
+## 100 Muestra 100      243
+```
+
+---
+class: my_style2
+
+# .center[Selección de columnas]
+
+Quiero ver los niveles de quienes tienen diabetes. No quiero mostrar la columna de clasificación.
+
+Opcion 4:
+
+
+```r
+subset(mi_df, 
+       clasific=="diabetes", 
+       select=c("muestra", "lecturas")
+       )
+```
+
+```
+##         muestra lecturas
+## 3     Muestra 3      133
+## 7     Muestra 7      157
+## 9     Muestra 9      159
+## 11   Muestra 11      272
+## 12   Muestra 12      265
+## 13   Muestra 13      268
+## 15   Muestra 15      233
+## 16   Muestra 16      278
+## 17   Muestra 17      158
+## 18   Muestra 18      290
+## 22   Muestra 22      191
+## 25   Muestra 25      216
+## 26   Muestra 26      296
+## 27   Muestra 27      296
+## 28   Muestra 28      231
+## 29   Muestra 29      153
+## 30   Muestra 30      228
+## 31   Muestra 31      170
+## 32   Muestra 32      275
+## 33   Muestra 33      264
+## 36   Muestra 36      158
+## 37   Muestra 37      132
+## 38   Muestra 38      184
+## 39   Muestra 39      157
+## 40   Muestra 40      214
+## 42   Muestra 42      269
+## 43   Muestra 43      255
+## 46   Muestra 46      289
+## 48   Muestra 48      282
+## 49   Muestra 49      245
+## 50   Muestra 50      172
+## 51   Muestra 51      165
+## 54   Muestra 54      137
+## 56   Muestra 56      150
+## 57   Muestra 57      230
+## 58   Muestra 58      202
+## 62   Muestra 62      228
+## 63   Muestra 63      287
+## 65   Muestra 65      151
+## 66   Muestra 66      132
+## 67   Muestra 67      283
+## 68   Muestra 68      278
+## 69   Muestra 69      161
+## 70   Muestra 70      267
+## 71   Muestra 71      242
+## 72   Muestra 72      266
+## 73   Muestra 73      250
+## 75   Muestra 75      127
+## 76   Muestra 76      211
+## 79   Muestra 79      229
+## 80   Muestra 80      255
+## 81   Muestra 81      163
+## 82   Muestra 82      178
+## 83   Muestra 83      188
+## 84   Muestra 84      231
+## 85   Muestra 85      285
+## 86   Muestra 86      149
+## 87   Muestra 87      288
+## 90   Muestra 90      271
+## 93   Muestra 93      187
+## 95   Muestra 95      225
+## 98   Muestra 98      247
+## 99   Muestra 99      231
+## 100 Muestra 100      243
+```
+
+---
+class: my_style2
+
+# .center[Filtrado de tablas]
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasif=="diabetes")
+mi_df[clasific=="diabetes", -"clasific"]
+```
+
+```
+## Error in -"clasific": invalid argument to unary operator
+```
+
+
+```r
+mis_diabetes &lt;- which(mi_df$clasific=="diabetes")
+mi_df[clasific=="diabetes", -3]
+```
+
+```
+## Error in `[.data.frame`(mi_df, clasific == "diabetes", -3): object 'clasific' not found
+```
+
+## ¡Se me olvida la sintaxis!
+--
+
+# .center[¡Debe haber una mejor manera!]
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+* Parte del *tidyverse* 
+
+* las funciones representan *verbos* que actuan sobre los *datos*
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+
+
+```r
+library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+
+Filtramos 
+
+
+```r
+dplyr::filter(.data = mi_df, 
+              clasific=="diabetes")
+```
+
+```
+##        muestra lecturas clasific
+## 1    Muestra 3      133 diabetes
+## 2    Muestra 7      157 diabetes
+## 3    Muestra 9      159 diabetes
+## 4   Muestra 11      272 diabetes
+## 5   Muestra 12      265 diabetes
+## 6   Muestra 13      268 diabetes
+## 7   Muestra 15      233 diabetes
+## 8   Muestra 16      278 diabetes
+## 9   Muestra 17      158 diabetes
+## 10  Muestra 18      290 diabetes
+## 11  Muestra 22      191 diabetes
+## 12  Muestra 25      216 diabetes
+## 13  Muestra 26      296 diabetes
+## 14  Muestra 27      296 diabetes
+## 15  Muestra 28      231 diabetes
+## 16  Muestra 29      153 diabetes
+## 17  Muestra 30      228 diabetes
+## 18  Muestra 31      170 diabetes
+## 19  Muestra 32      275 diabetes
+## 20  Muestra 33      264 diabetes
+## 21  Muestra 36      158 diabetes
+## 22  Muestra 37      132 diabetes
+## 23  Muestra 38      184 diabetes
+## 24  Muestra 39      157 diabetes
+## 25  Muestra 40      214 diabetes
+## 26  Muestra 42      269 diabetes
+## 27  Muestra 43      255 diabetes
+## 28  Muestra 46      289 diabetes
+## 29  Muestra 48      282 diabetes
+## 30  Muestra 49      245 diabetes
+## 31  Muestra 50      172 diabetes
+## 32  Muestra 51      165 diabetes
+## 33  Muestra 54      137 diabetes
+## 34  Muestra 56      150 diabetes
+## 35  Muestra 57      230 diabetes
+## 36  Muestra 58      202 diabetes
+## 37  Muestra 62      228 diabetes
+## 38  Muestra 63      287 diabetes
+## 39  Muestra 65      151 diabetes
+## 40  Muestra 66      132 diabetes
+## 41  Muestra 67      283 diabetes
+## 42  Muestra 68      278 diabetes
+## 43  Muestra 69      161 diabetes
+## 44  Muestra 70      267 diabetes
+## 45  Muestra 71      242 diabetes
+## 46  Muestra 72      266 diabetes
+## 47  Muestra 73      250 diabetes
+## 48  Muestra 75      127 diabetes
+## 49  Muestra 76      211 diabetes
+## 50  Muestra 79      229 diabetes
+## 51  Muestra 80      255 diabetes
+## 52  Muestra 81      163 diabetes
+## 53  Muestra 82      178 diabetes
+## 54  Muestra 83      188 diabetes
+## 55  Muestra 84      231 diabetes
+## 56  Muestra 85      285 diabetes
+## 57  Muestra 86      149 diabetes
+## 58  Muestra 87      288 diabetes
+## 59  Muestra 90      271 diabetes
+## 60  Muestra 93      187 diabetes
+## 61  Muestra 95      225 diabetes
+## 62  Muestra 98      247 diabetes
+## 63  Muestra 99      231 diabetes
+## 64 Muestra 100      243 diabetes
+```
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+
+Seleccionamos columnas 
+
+
+```r
+dplyr::select(.data = mi_df, -clasific)
+```
+
+```
+##         muestra lecturas
+## 1     Muestra 1      116
+## 2     Muestra 2       91
+## 3     Muestra 3      133
+## 4     Muestra 4       97
+## 5     Muestra 5      120
+## 6     Muestra 6       89
+## 7     Muestra 7      157
+## 8     Muestra 8      103
+## 9     Muestra 9      159
+## 10   Muestra 10      123
+## 11   Muestra 11      272
+## 12   Muestra 12      265
+## 13   Muestra 13      268
+## 14   Muestra 14       77
+## 15   Muestra 15      233
+## 16   Muestra 16      278
+## 17   Muestra 17      158
+## 18   Muestra 18      290
+## 19   Muestra 19       82
+## 20   Muestra 20      107
+## 21   Muestra 21       87
+## 22   Muestra 22      191
+## 23   Muestra 23      115
+## 24   Muestra 24       82
+## 25   Muestra 25      216
+## 26   Muestra 26      296
+## 27   Muestra 27      296
+## 28   Muestra 28      231
+## 29   Muestra 29      153
+## 30   Muestra 30      228
+## 31   Muestra 31      170
+## 32   Muestra 32      275
+## 33   Muestra 33      264
+## 34   Muestra 34      104
+## 35   Muestra 35      117
+## 36   Muestra 36      158
+## 37   Muestra 37      132
+## 38   Muestra 38      184
+## 39   Muestra 39      157
+## 40   Muestra 40      214
+## 41   Muestra 41       53
+## 42   Muestra 42      269
+## 43   Muestra 43      255
+## 44   Muestra 44      109
+## 45   Muestra 45       82
+## 46   Muestra 46      289
+## 47   Muestra 47       91
+## 48   Muestra 48      282
+## 49   Muestra 49      245
+## 50   Muestra 50      172
+## 51   Muestra 51      165
+## 52   Muestra 52       75
+## 53   Muestra 53      125
+## 54   Muestra 54      137
+## 55   Muestra 55       92
+## 56   Muestra 56      150
+## 57   Muestra 57      230
+## 58   Muestra 58      202
+## 59   Muestra 59       81
+## 60   Muestra 60       61
+## 61   Muestra 61       91
+## 62   Muestra 62      228
+## 63   Muestra 63      287
+## 64   Muestra 64       96
+## 65   Muestra 65      151
+## 66   Muestra 66      132
+## 67   Muestra 67      283
+## 68   Muestra 68      278
+## 69   Muestra 69      161
+## 70   Muestra 70      267
+## 71   Muestra 71      242
+## 72   Muestra 72      266
+## 73   Muestra 73      250
+## 74   Muestra 74      111
+## 75   Muestra 75      127
+## 76   Muestra 76      211
+## 77   Muestra 77       96
+## 78   Muestra 78      100
+## 79   Muestra 79      229
+## 80   Muestra 80      255
+## 81   Muestra 81      163
+## 82   Muestra 82      178
+## 83   Muestra 83      188
+## 84   Muestra 84      231
+## 85   Muestra 85      285
+## 86   Muestra 86      149
+## 87   Muestra 87      288
+## 88   Muestra 88      105
+## 89   Muestra 89       60
+## 90   Muestra 90      271
+## 91   Muestra 91      100
+## 92   Muestra 92       65
+## 93   Muestra 93      187
+## 94   Muestra 94      126
+## 95   Muestra 95      225
+## 96   Muestra 96       78
+## 97   Muestra 97       72
+## 98   Muestra 98      247
+## 99   Muestra 99      231
+## 100 Muestra 100      243
+```
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+
+Ordenamos
+
+
+```r
+dplyr::arrange(.data = mi_df, lecturas)
+```
+
+```
+##         muestra lecturas    clasific
+## 1    Muestra 41       53 no diabetes
+## 2    Muestra 89       60 no diabetes
+## 3    Muestra 60       61 no diabetes
+## 4    Muestra 92       65 no diabetes
+## 5    Muestra 97       72 no diabetes
+## 6    Muestra 52       75 no diabetes
+## 7    Muestra 14       77 no diabetes
+## 8    Muestra 96       78 no diabetes
+## 9    Muestra 59       81 no diabetes
+## 10   Muestra 19       82 no diabetes
+## 11   Muestra 24       82 no diabetes
+## 12   Muestra 45       82 no diabetes
+## 13   Muestra 21       87 no diabetes
+## 14    Muestra 6       89 no diabetes
+## 15    Muestra 2       91 no diabetes
+## 16   Muestra 47       91 no diabetes
+## 17   Muestra 61       91 no diabetes
+## 18   Muestra 55       92 no diabetes
+## 19   Muestra 64       96 no diabetes
+## 20   Muestra 77       96 no diabetes
+## 21    Muestra 4       97 no diabetes
+## 22   Muestra 78      100      riesgo
+## 23   Muestra 91      100      riesgo
+## 24    Muestra 8      103      riesgo
+## 25   Muestra 34      104      riesgo
+## 26   Muestra 88      105      riesgo
+## 27   Muestra 20      107      riesgo
+## 28   Muestra 44      109      riesgo
+## 29   Muestra 74      111      riesgo
+## 30   Muestra 23      115      riesgo
+## 31    Muestra 1      116      riesgo
+## 32   Muestra 35      117      riesgo
+## 33    Muestra 5      120      riesgo
+## 34   Muestra 10      123      riesgo
+## 35   Muestra 53      125      riesgo
+## 36   Muestra 94      126      riesgo
+## 37   Muestra 75      127    diabetes
+## 38   Muestra 37      132    diabetes
+## 39   Muestra 66      132    diabetes
+## 40    Muestra 3      133    diabetes
+## 41   Muestra 54      137    diabetes
+## 42   Muestra 86      149    diabetes
+## 43   Muestra 56      150    diabetes
+## 44   Muestra 65      151    diabetes
+## 45   Muestra 29      153    diabetes
+## 46    Muestra 7      157    diabetes
+## 47   Muestra 39      157    diabetes
+## 48   Muestra 17      158    diabetes
+## 49   Muestra 36      158    diabetes
+## 50    Muestra 9      159    diabetes
+## 51   Muestra 69      161    diabetes
+## 52   Muestra 81      163    diabetes
+## 53   Muestra 51      165    diabetes
+## 54   Muestra 31      170    diabetes
+## 55   Muestra 50      172    diabetes
+## 56   Muestra 82      178    diabetes
+## 57   Muestra 38      184    diabetes
+## 58   Muestra 93      187    diabetes
+## 59   Muestra 83      188    diabetes
+## 60   Muestra 22      191    diabetes
+## 61   Muestra 58      202    diabetes
+## 62   Muestra 76      211    diabetes
+## 63   Muestra 40      214    diabetes
+## 64   Muestra 25      216    diabetes
+## 65   Muestra 95      225    diabetes
+## 66   Muestra 30      228    diabetes
+## 67   Muestra 62      228    diabetes
+## 68   Muestra 79      229    diabetes
+## 69   Muestra 57      230    diabetes
+## 70   Muestra 28      231    diabetes
+## 71   Muestra 84      231    diabetes
+## 72   Muestra 99      231    diabetes
+## 73   Muestra 15      233    diabetes
+## 74   Muestra 71      242    diabetes
+## 75  Muestra 100      243    diabetes
+## 76   Muestra 49      245    diabetes
+## 77   Muestra 98      247    diabetes
+## 78   Muestra 73      250    diabetes
+## 79   Muestra 43      255    diabetes
+## 80   Muestra 80      255    diabetes
+## 81   Muestra 33      264    diabetes
+## 82   Muestra 12      265    diabetes
+## 83   Muestra 72      266    diabetes
+## 84   Muestra 70      267    diabetes
+## 85   Muestra 13      268    diabetes
+## 86   Muestra 42      269    diabetes
+## 87   Muestra 90      271    diabetes
+## 88   Muestra 11      272    diabetes
+## 89   Muestra 32      275    diabetes
+## 90   Muestra 16      278    diabetes
+## 91   Muestra 68      278    diabetes
+## 92   Muestra 48      282    diabetes
+## 93   Muestra 67      283    diabetes
+## 94   Muestra 85      285    diabetes
+## 95   Muestra 63      287    diabetes
+## 96   Muestra 87      288    diabetes
+## 97   Muestra 46      289    diabetes
+## 98   Muestra 18      290    diabetes
+## 99   Muestra 26      296    diabetes
+## 100  Muestra 27      296    diabetes
+```
+
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+combinamos todo 
+
+
+```r
+mi_subset &lt;- 
+dplyr::filter(.data = mi_df, 
+              clasific=="diabetes")
+
+mi_subset &lt;- dplyr::select(.data = mi_subset, -clasific)
+mi_subset &lt;- dplyr::arrange(.data = mi_subset, lecturas)
+mi_subset
+```
+
+```
+##        muestra lecturas
+## 1   Muestra 75      127
+## 2   Muestra 37      132
+## 3   Muestra 66      132
+## 4    Muestra 3      133
+## 5   Muestra 54      137
+## 6   Muestra 86      149
+## 7   Muestra 56      150
+## 8   Muestra 65      151
+## 9   Muestra 29      153
+## 10   Muestra 7      157
+## 11  Muestra 39      157
+## 12  Muestra 17      158
+## 13  Muestra 36      158
+## 14   Muestra 9      159
+## 15  Muestra 69      161
+## 16  Muestra 81      163
+## 17  Muestra 51      165
+## 18  Muestra 31      170
+## 19  Muestra 50      172
+## 20  Muestra 82      178
+## 21  Muestra 38      184
+## 22  Muestra 93      187
+## 23  Muestra 83      188
+## 24  Muestra 22      191
+## 25  Muestra 58      202
+## 26  Muestra 76      211
+## 27  Muestra 40      214
+## 28  Muestra 25      216
+## 29  Muestra 95      225
+## 30  Muestra 30      228
+## 31  Muestra 62      228
+## 32  Muestra 79      229
+## 33  Muestra 57      230
+## 34  Muestra 28      231
+## 35  Muestra 84      231
+## 36  Muestra 99      231
+## 37  Muestra 15      233
+## 38  Muestra 71      242
+## 39 Muestra 100      243
+## 40  Muestra 49      245
+## 41  Muestra 98      247
+## 42  Muestra 73      250
+## 43  Muestra 43      255
+## 44  Muestra 80      255
+## 45  Muestra 33      264
+## 46  Muestra 12      265
+## 47  Muestra 72      266
+## 48  Muestra 70      267
+## 49  Muestra 13      268
+## 50  Muestra 42      269
+## 51  Muestra 90      271
+## 52  Muestra 11      272
+## 53  Muestra 32      275
+## 54  Muestra 16      278
+## 55  Muestra 68      278
+## 56  Muestra 48      282
+## 57  Muestra 67      283
+## 58  Muestra 85      285
+## 59  Muestra 63      287
+## 60  Muestra 87      288
+## 61  Muestra 46      289
+## 62  Muestra 18      290
+## 63  Muestra 26      296
+## 64  Muestra 27      296
+```
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+O lo hacemos de la forma *tidyverse* usando el paquete *magrittr*
+
+
+```r
+library(magrittr)
+```
+
+---
+class: my_style2
+
+# .center[El paquete dplyr]
+
+O lo hacemos de la forma *tidyverse* usando el paquete *magrittr*
+
+
+```r
+mi_df %&gt;% 
+  dplyr::filter(clasific=="diabetes") %&gt;% 
+  dplyr::select(-clasific) %&gt;% 
+  dplyr::arrange(lecturas)
+```
+
+```
+##        muestra lecturas
+## 1   Muestra 75      127
+## 2   Muestra 37      132
+## 3   Muestra 66      132
+## 4    Muestra 3      133
+## 5   Muestra 54      137
+## 6   Muestra 86      149
+## 7   Muestra 56      150
+## 8   Muestra 65      151
+## 9   Muestra 29      153
+## 10   Muestra 7      157
+## 11  Muestra 39      157
+## 12  Muestra 17      158
+## 13  Muestra 36      158
+## 14   Muestra 9      159
+## 15  Muestra 69      161
+## 16  Muestra 81      163
+## 17  Muestra 51      165
+## 18  Muestra 31      170
+## 19  Muestra 50      172
+## 20  Muestra 82      178
+## 21  Muestra 38      184
+## 22  Muestra 93      187
+## 23  Muestra 83      188
+## 24  Muestra 22      191
+## 25  Muestra 58      202
+## 26  Muestra 76      211
+## 27  Muestra 40      214
+## 28  Muestra 25      216
+## 29  Muestra 95      225
+## 30  Muestra 30      228
+## 31  Muestra 62      228
+## 32  Muestra 79      229
+## 33  Muestra 57      230
+## 34  Muestra 28      231
+## 35  Muestra 84      231
+## 36  Muestra 99      231
+## 37  Muestra 15      233
+## 38  Muestra 71      242
+## 39 Muestra 100      243
+## 40  Muestra 49      245
+## 41  Muestra 98      247
+## 42  Muestra 73      250
+## 43  Muestra 43      255
+## 44  Muestra 80      255
+## 45  Muestra 33      264
+## 46  Muestra 12      265
+## 47  Muestra 72      266
+## 48  Muestra 70      267
+## 49  Muestra 13      268
+## 50  Muestra 42      269
+## 51  Muestra 90      271
+## 52  Muestra 11      272
+## 53  Muestra 32      275
+## 54  Muestra 16      278
+## 55  Muestra 68      278
+## 56  Muestra 48      282
+## 57  Muestra 67      283
+## 58  Muestra 85      285
+## 59  Muestra 63      287
+## 60  Muestra 87      288
+## 61  Muestra 46      289
+## 62  Muestra 18      290
+## 63  Muestra 26      296
+## 64  Muestra 27      296
+```
+
+---
+class: my_style2
+
+La sintaxis del *tidyverse* es un poco más cómoda para el análisis de datos.
+Pueden conocer más de ella en nuestro curso *R para Ciencia de Datos* 
+
+
+---
+class: my_style2
+
+Ejercicio: 
+
+Se midieron las concentraciones de las proteínas p1, p2, y p3 en 26 pacientes. 
+
+
+```r
+set.seed(725)
+df_ejercicio &lt;- data.frame(paciente = paste0("Paciente_", LETTERS[1:26]),
+                           p1 = round(runif(26, min = 50, max = 100)), 
+                           p2 = round(runif(26, min = 50, max = 100)), 
+                           p3 = round(runif(26, min = 50, max = 100))
+                          )
+```
+
+---
+class: my_style2
+
+Ejercicio: 
+
+Se midieron las concentraciones de las proteínas p1, p2, y p3 en 20 pacientes. 
+
+* La proteína p1 es un control de calidad. Si su concentración es menor a 60, ninguna medición es confiable.
+* La proteína p2 es un marcador de daño renal. Si su concentración es mayor a 80, hay daño renal.
+* La proteína p3 es un marcador de daño hepático. Si su concentración es mayor a 75, hay daño hepático.
+
+---
+class: my_style2
+
+Su tarea consiste en los siguientes puntos:
+
+1) Notificar que pacientes requieren una nueva medición de las proteínas.
+
+2) Para los pacientes identificar que pacientes presentan daño renal, daño hepático, o mixto.
+
+3) Identificar que proteína está en mayor concentración para los pacientes con daño mixto. 
+
+4) Presentar los valores mínimos, máximos, y medios para cada proteína por grupo de paciente basado en daños. 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

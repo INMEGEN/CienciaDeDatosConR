@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sesión III: Visualizando datos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Guillermo de Anda-Jáuregui y Laura Gómez-Romero" />
+    <meta name="date" content="2022-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sesión III: Visualizando datos
+### Guillermo de Anda-Jáuregui y Laura Gómez-Romero
+### Instituto Nacional de Medicina Genómica
+### 2022
+
+---
+
+class: inverse, center, middle
+
+
+# ¿Por qué **visualizamos los datos** ?
+
+---
+class: inverse, center, middle
+
+# ¿Por qué **visualizamos los datos** ?
+
+.left[
+#  -&gt; Explorar los datos 
+#  -&gt; Reconocer patrones
+#  -&gt; Transmitir información
+#  -&gt; Presentar resultados
+]
+
+---
+class: inverse, center, middle
+
+.left[
+&lt;img src="https://www.r-project.org/logo/Rlogo.svg" width="100" height="100" /&gt;
+#  -&gt; Diferentes primitivas a alto nivel (plot, barplot, hist, boxplot, etc.)
+#  -&gt; Primitivas de bajo nivel (points, lines)
+#  -&gt; Agregación por orden de la llamada a la función (abline, legend, etc.)
+]
+
+---
+class: inverse, center, middle
+&lt;img src="figures/hex_ggplot.png"&gt;
+.left[
+# -&gt; Gramática de gráficos (Pre-tidyverse)
+# -&gt; Objetos + Transform + Persistencia 
+]
+---
+class: inverse, center, middle
+
+# Ejemplo de dispersión
+##  Hagamos el gráfico de dispersión usando **iris** para Petal.Length vs Petal.Width en versión R-base y con ggplot2:
+
+
+```r
+iris %&gt;% head
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+##Veamos la versión de *R-base* y la de *ggplot2*
+
+---
+class: inverse, center, middle
+
+#R version
+
+
+```r
+plot(
+  x = iris$Petal.Length,
+  y = iris$Petal.Width,
+  col = iris$Species,
+  type = "p", #for points
+  xlab = "Petal.Length",
+  ylab = "Petal.Width"
+)
+legend(
+  legend = levels(iris$Species),
+  col = seq(levels(iris$Species)),
+  x = 1,
+  y = 2.5,
+  lty = 1
+)
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+# ggplot version
+
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       colour = Species
+                       )
+         ) +
+  geom_point()
+```
+---
+class: inverse, center, middle
+
+![](slides_04_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#Hacemos un paréntesis y volvemos sobre este ejemplo ...
+---
+class: inverse, center, middle
+#ggplot2: Filosofía
+
+https://ggplot2.tidyverse.org/reference/
+
+&lt;img src="figures/ggplo2book.png"&gt;
+
+---
+class: inverse, center, middle
+#ggplot2: Filosofía
+
+```r
+ggplot(data = &lt;DATA&gt;) + 
+  &lt;GEOM_FUNCTION&gt;(
+     mapping = aes(&lt;MAPPINGS&gt;),
+     stat = &lt;STAT&gt;, 
+     position = &lt;POSITION&gt;
+  ) +
+  &lt;COORDINATE_FUNCTION&gt; +
+  &lt;FACET_FUNCTION&gt; +
+  &lt;THEME&gt;
+```
+# OJO con la maldición de %&gt;% vs "+" 
+---
+class: inverse, center, middle
+&lt;img src="figures/ggplot2_masterpiece.png"&gt;"
+
+---
+class: inverse, center, middle
+#ggplot2: Gráfica
+##Debemos explicitar qué datos se utilizan
+## -&gt; Desde una consecución de comandos
+
+```r
+Nuestros_Datos %&gt;%
+  ggplot()
+```
+
+## -&gt; De forma explícita
+
+```r
+ggplot(data = Nuestros_Datos)
+```
+
+---
+class: inverse, center, middle
+#ggplot2: Mapping
+##aes
+### Definen como las variables son **mapeadas** a las propiedades visuales (estéticas o aesthetic en inglés) de los geom.
+
+---
+class: inverse, center, middle
+#ggplot2: PRIMITIVAS
+
+##geom
+### Objetos **geométricos** que son la representación visual de las observaciones.
+
+---
+class: inverse, center, middle
+&lt;img src="figures/ggplot2_exploratory.png"&gt;
+
+---
+class: inverse, center, middle
+#ggplot2: PRIMITIVAS
+&lt;img src="figures/geom1d.png"&gt;
+
+---
+class: inverse, center, middle
+&lt;img src="figures/geom2d.png"&gt;
+---
+class: inverse, center, middle
+#ggplot2: PRIMITIVAS
+&lt;img src="figures/geom3d.png"&gt;
+# Tenemos ** GEOMs ** para 1, 2 y 3D 
+---
+class: inverse, center, middle
+#ggplot2: PRIMITIVAS - geom_point - shape
+&lt;img src="figures/points.png"&gt;
+---
+class: inverse, center, middle
+#Terminado el paréntesis y volvemos sobre el ejemplo ...
+---
+class: inverse, center, middle
+
+![](slides_04_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+---
+class: inverse, center, middle
+##EJERCICIOS:
+## - Cambie el punto de la gráfica de dispersión para que utilice un rombo relleno de color
+---
+class: inverse, center, middle
+# ¿Qué más le podemos hacer a la gráfica?
+![](slides_04_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+.left[
+# Pensemos en un...
+# -&gt; Título y subtítulo...
+# -&gt; Leyenda abajo...
+# -&gt; Quitar el fondo gris...
+# -&gt; Cambiar la paleta de colores...
+# -&gt; Separar en paneles por Specie...
+]
+---
+class: inverse, center, middle
+#ggplot2: Títulos y subtítulos
+
+```r
+labs(
+  title = "Mi título",
+  subtitle = "Mi subtítulo",
+  caption = "Un pie de figura"
+)
+```
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = Species
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+  title = "IRIS",
+  subtitle = "Dispersión de dimensión de pétalos",
+  caption = "Acá va el pie de figura ..."
+)
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+# ¿Y si tenemos que poner símbolos matemáticos en los ejes?
+
+```r
+labs(
+    x = quote(Petal.Length=sum(x[i] ^ 2, i == 1, n)),
+    y = quote(Petal.Widht=alpha + beta + frac(delta, theta))
+  )
+```
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = Species
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+    title = "IRIS",
+    subtitle = "Dispersión de dimensión de pétalos",
+    caption = "Acá va el pie de figura ...",
+    x = quote(sum(x[i] ^ 2, i == 1, n)),
+    y = quote(alpha + beta + frac(delta, theta))
+)
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+.left[
+# Pensemos en un...
+# -&gt; ~~Título y subtítulo...~~
+# -&gt; Leyenda abajo...
+# -&gt; Quitar el fondo gris...
+# -&gt; Cambiar la paleta de colores...
+# -&gt; Separar en paneles por Specie...
+]
+---
+class: inverse, center, middle
+#ggplot2: THEMES
+&lt;img src="figures/themes.png"&gt;
+---
+class: inverse, center, middle
+#ggplot2: THEMES - Legend
+
+```r
++ theme(legend.position = NULL) # remove the legend
++ theme(legend.position = "left")
++ theme(legend.position = "top")
++ theme(legend.position = "bottom")
++ theme(legend.position = "right") # the default
+```
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = Species
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+    title = "IRIS",
+    subtitle = "Dispersión de dimensión de pétalos",
+    caption = "Acá va el pie de figura ...",
+    x = quote(sum(x[i] ^ 2, i == 1, n)),
+    y = quote(alpha + beta + frac(delta, theta))
+) +
+  theme_bw() +
+  theme(legend.position = "bottom")
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+.left[
+# Pensemos en un...
+# -&gt; ~~Título y subtítulo...~~
+# -&gt; ~~Leyenda abajo...~~
+# -&gt; ~~Quitar el fondo gris...~~
+# -&gt; Cambiar la paleta de colores...
+# -&gt; Separar en paneles por Specie...
+]
+---
+class: inverse, center, middle
+#ggplot2: SCALES
+# Tenemos de todos los sabores!!!
+
+```r
+  scale_x/y/colour/fill_manual/continuos/discrete/log10
+  scale_x_continuous() 
+  scale_fill_manual()
+  scale_x_log10()  
+  scale_x_continuous(limits = range(iris$Petal.Length))
+  scale_y_continuous(limits = c(min=0, max=10))
+  scale_colour_brewer(palette = "Set1")
+  scale_fill_distiller("spectral")
+```
+---
+class: inverse, center, middle
+#ggplot2: SCALES colors
+&lt;img src="figures/paletas.png"&gt;
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = as.factor(Species)
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+    title = "IRIS",
+    subtitle = "Dispersión de dimensión de pétalos",
+    caption = "Acá va el pie de figura ...",
+    x = quote(sum(x[i] ^ 2, i == 1, n)),
+    y = quote(alpha + beta + frac(delta, theta))
+) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_fill_manual(
+    values = c("yellow", "blue", "green"),
+    name = "Species"
+  )
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+.left[
+# Pensemos en un...
+# -&gt; ~~Título y subtítulo...~~
+# -&gt; ~~Leyenda abajo...~~
+# -&gt; ~~Quitar el fondo gris...~~
+# -&gt; ~~Cambiar la paleta de colores...~~
+# -&gt; Separar en paneles por Specie...
+]
+---
+class: inverse, center, middle
+#ggplot2: Facets
+## Facets
+### Define como los datos pueden ser agrupados en grillas (filas y/o columnas)
+---
+class: inverse, center, middle
+#ggplot2: Facets: wrap vs grid
+## Tenemos de dos sabores
+### -&gt; facet_wrap: Para una variable.
+### -&gt; facet_grid: Una matriz de 2 variables.
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = as.factor(Species)
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+    title = "IRIS",
+    subtitle = "Dispersión de dimensión de pétalos",
+    caption = "Acá va el pie de figura ...",
+    x = quote(sum(x[i] ^ 2, i == 1, n)),
+    y = quote(alpha + beta + frac(delta, theta))
+) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_fill_manual(
+    values = c("yellow", "blue", "green"),
+    name = "Species"
+  ) +
+  facet_wrap(~Species)
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = as.factor(Species)
+                       )
+         ) +
+  geom_point(shape=23) +
+  labs(
+    title = "IRIS",
+    subtitle = "Dispersión de dimensión de pétalos",
+    caption = "Acá va el pie de figura ...",
+    x = quote(sum(x[i] ^ 2, i == 1, n)),
+    y = quote(alpha + beta + frac(delta, theta))
+) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_fill_manual(
+    values = c("yellow", "blue", "green"),
+    name = "Species"
+  ) +
+  facet_wrap(~Species, scales = "free")
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+.left[
+# Pensemos en un...
+# -&gt; ~~Título y subtítulo...~~
+# -&gt; ~~Leyenda abajo...~~
+# -&gt; ~~Quitar el fondo gris...~~
+# -&gt; ~~Cambiar la paleta de colores...~~
+# -&gt; ~~Separar en paneles por Specie...~~
+]
+---
+class: inverse, center, middle
+.left[
+##Ejercicios:
+## Utilizando MTCARS retome la gráfica de dispersión de la clase pasada donde logró agrupar por cantidad de cilindros.
+### - Agregue título a la gráfica.
+### - Utilice el theme de blanco y negro
+### - Genere los paneles correspondinete a la cantidad de cilindros.
+]
+---
+class: inverse, center, middle
+#BONUS: geom_smooth
+
+```r
+iris %&gt;%
+  ggplot(mapping = aes(x = Petal.Length, 
+                       y = Petal.Width, 
+                       fill = as.factor(Species)
+                       )
+         ) +
+  geom_point(shape=23) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  geom_smooth()
+```
+---
+class: inverse, center, middle
+#BONUS: geom_smooth
+
+```
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+![](slides_04_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+# Trabajemos con boxplots de ggplot2
+# geom_boxplot
+## -&gt; Ojo con el formato de los datos
+## -&gt; geom_boxplot los requiere en formato largo
+
+---
+class: inverse, center, middle
+
+```r
+iris %&gt;% head
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+```r
+iris %&gt;%
+  tidyr::pivot_longer(cols = -Species, names_to = "variables", values_to = "values") %&gt;% 
+ head
+```
+
+```
+## # A tibble: 6 x 3
+##   Species variables    values
+##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;
+## 1 setosa  Sepal.Length    5.1
+## 2 setosa  Sepal.Width     3.5
+## 3 setosa  Petal.Length    1.4
+## 4 setosa  Petal.Width     0.2
+## 5 setosa  Sepal.Length    4.9
+## 6 setosa  Sepal.Width     3
+```
+---
+class: inverse, center, middle
+# geom_boxplot
+# Ahora podemos hacer el boxplot
+
+
+
+```r
+iris %&gt;% 
+  tidyr::pivot_longer(
+    cols = -Species, 
+    names_to = "variables", 
+    values_to = "values") %&gt;% 
+  ggplot(mapping = aes(x = variables,
+                       y = values,
+                       fill = as_factor(Species))) + 
+  geom_boxplot()
+```
+---
+class: inverse, center, middle
+# geom_boxplot
+
+![](slides_04_files/figure-html/unnamed-chunk-32-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+# Ejercicio
+.left[
+## - Hacer un ggplot's boxplot con **MTCARS** para las variables "disp" y "hp" 
+
+Sugerencia: 
+- Cambie la representación de los datos
+- Utilice verbos para seleccionar o filtrar, dependiendo de su razonamiento.
+]
+---
+class: inverse, center, middle
+#geom_violin
+![](slides_04_files/figure-html/unnamed-chunk-33-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#geom_density
+#Pensemos en datos simulados
+
+```r
+datos &lt;- tibble(
+  valores = c(rnorm(100), rnorm(n = 100, mean = 10)))
+datos %&gt;% 
+  ggplot(aes(x = valores))+
+  geom_density()
+```
+---
+class: inverse, center, middle
+#geom_density
+#Pensemos en datos simulados
+![](slides_04_files/figure-html/unnamed-chunk-35-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+# EJERCICIO
+## Genere el boxplot de los datos anteriores
+## Genere el violín de los datos anteriores
+## ¿Qué observa en ambos casos? ¿Es correcto?
+---
+class: inverse, center, middle
+#ggplot2: Statistical transformations 
+&lt;img src="figures/stat1.png" &gt;
+
+---
+class: inverse, center, middle
+#ggplot2: Statistical transformations 
+&lt;img src="figures/stat2.png" &gt;
+
+---
+class: inverse, center, middle
+#ggplot2: geom_bar
+# Trabajemos con diamods
+
+```r
+  diamonds %&gt;% head
+```
+
+```
+## # A tibble: 6 x 10
+##   carat cut       color clarity depth table price     x     y     z
+##   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+## 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+## 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+## 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+```
+---
+class: inverse, center, middle
+
+```r
+  diamonds %&gt;% 
+  ggplot() + 
+  geom_bar(
+    mapping = aes(x = cut)
+  )
+```
+
+![](slides_04_files/figure-html/unnamed-chunk-37-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+```r
+  ggplot(data = diamonds) + 
+  stat_count(mapping = aes(x = cut))
+```
+
+![](slides_04_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+
+```r
+  ggplot(data = diamonds) + 
+  stat_summary(mapping = aes(x = cut, y = depth),
+    fun.ymin = min,fun.ymax = max,fun.y = median)
+```
+
+```
+## Warning: `fun.y` is deprecated. Use `fun` instead.
+```
+
+```
+## Warning: `fun.ymin` is deprecated. Use `fun.min` instead.
+```
+
+```
+## Warning: `fun.ymax` is deprecated. Use `fun.max` instead.
+```
+
+![](slides_04_files/figure-html/unnamed-chunk-39-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#ggplot2: position
+
+```r
+  ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = clarity), 
+    position = "dodge"
+  )
+```
+---
+class: inverse, center, middle
+#ggplot2: position
+![](slides_04_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#coor_flip vs coord_polar
+
+```r
+bar &lt;- ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = cut), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1) +
+  labs(x = NULL, y = NULL)
+
+bar + coord_flip()
+bar + coord_polar()
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-44-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#geom_tile
+
+```r
+USArrests %&gt;% 
+  rownames_to_column(var = "estado") %&gt;% 
+  pivot_longer(cols = -estado, names_to = "type", values_to = "value", values_drop_na = FALSE) %&gt;% 
+  ggplot(mapping = aes(x = type, y = estado, fill = value)) +
+  geom_tile() + 
+  scale_fill_distiller("spectral")
+```
+---
+class: inverse, center, middle
+![](slides_04_files/figure-html/unnamed-chunk-46-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#Ejercicio: 
+## -&gt; Cambie la tonalidad para que la barra de color quede en verde, amarillo y rojo.
+---
+class: inverse, center, middle
+#ggplot2:Saving
+## plots tradicional
+### -&gt; ~~**NO se pueden GUARDAR**~~
+### -&gt; ~~**NO se pueden Cargar**~~
+---
+class: inverse, center, middle
+#ggplot2:Saving
+## plots de ggplot son **Objetos**
+### -&gt; Se pueden almacenar .RData, RDS, etc.
+### -&gt; Se pueden cargar
+### -&gt; Siempre se pueden recuperar los datos
+### -&gt; Siempre se puede modificar la gráfica
+### -&gt; Se puede exportar a pdf, png, etc
+---
+class: inverse, center, middle
+#ggplot2:Saving
+
+```r
+bar &lt;- ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = cut), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1) +
+  labs(x = NULL, y = NULL)
+
+ggsave(plot = bar, filename = "results/bar.pdf")
+```
+
+```
+## Saving 7 x 7 in image
+```
+
+```r
+save(bar, file = "results/bar.RData")
+```
+---
+class: inverse, center, middle
+
+```r
+rm(list=ls())
+load("results/bar.RData")
+bar
+```
+
+![](slides_04_files/figure-html/unnamed-chunk-48-1.png)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+#EJERCICIO de TAREA!!!
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
