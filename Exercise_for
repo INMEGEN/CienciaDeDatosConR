@@ -1,0 +1,49 @@
+
+funcion_colaboraciones <- function(mis_colabs){
+  mis_genomicas <- c("genomics", 
+                     "proteomics", 
+                     "transcriptomics", 
+                     "lipidomics", 
+                     "metabolomics")
+  mi_mantenimiento <- c("metabolomics", "lipidomics")
+  if (mis_colabs %in% mis_genomicas){
+    if (mis_colabs %in% mi_mantenimiento){
+      categoria <- "Servicio disponible proximamente"
+    }else{
+      categoria <- "Servicio diponible"
+    }
+  }else{
+    categoria <- "Servicio no disponible"
+  }
+  
+  return(categoria)
+}
+
+mis_colabs <- c("genomics",
+                "genomics",
+                "proteomics", 
+                "microscopy", 
+                "fRMI",
+                "fRMI",
+                "lipidomics",
+                "HPLC",
+                "metabolomics",
+                "fluidomics",
+                "proteomics",
+                "a cake",
+                "transposomics",
+                "metagenomics",
+                "cellomics",
+                "microscopy",
+                "genomics",
+                "genomics",
+                "proteomics")
+
+mis_resultados <- character()
+for(patito in mis_colabs){
+  res <- funcion_colaboraciones(patito)
+  mis_resultados <- c(mis_resultados, res)
+}
+
+tabla_colab <- data.frame(colabs = mis_colabs, 
+                          dictamen = mis_resultados)
