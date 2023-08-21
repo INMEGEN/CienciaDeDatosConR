@@ -1,0 +1,418 @@
+CVE_ZM	NOM_ZM	CVE_ENT	NOM_ENT	CVEGEO	NOM_MUN
+01.01	Aguascalientes	01	Aguascalientes	01001	Aguascalientes
+01.01	Aguascalientes	01	Aguascalientes	01005	Jesús María
+01.01	Aguascalientes	01	Aguascalientes	01011	San Francisco de los Romo
+02.01	Ensenada	02	Baja California	02001	Ensenada
+02.02	Mexicali	02	Baja California	02002	Mexicali
+02.03	Tijuana	02	Baja California	02003	Tecate
+02.03	Tijuana	02	Baja California	02004	Tijuana
+02.03	Tijuana	02	Baja California	02005	Playas de Rosarito
+03.01	La Paz	03	Baja California Sur	03003	La Paz
+04.01	Campeche	04	Campeche	04002	Campeche
+05.01	La Laguna	05	Coahuila de Zaragoza	05009	Francisco I. Madero
+05.01	La Laguna	05	Coahuila de Zaragoza	05017	Matamoros
+05.01	La Laguna	05	Coahuila de Zaragoza	05035	Torreón
+05.01	La Laguna	10	Durango	10007	Gómez Palacio
+05.01	La Laguna	10	Durango	10012	Lerdo
+05.02	Monclova-Frontera	05	Coahuila de Zaragoza	05006	Casta±os
+05.02	Monclova-Frontera	05	Coahuila de Zaragoza	05010	Frontera
+05.02	Monclova-Frontera	05	Coahuila de Zaragoza	05018	Monclova
+05.02	Monclova-Frontera	05	Coahuila de Zaragoza	05031	San Buenaventura
+05.03	Piedras Negras	05	Coahuila de Zaragoza	05022	Nava
+05.03	Piedras Negras	05	Coahuila de Zaragoza	05025	Piedras Negras
+05.04	Saltillo	05	Coahuila de Zaragoza	05004	Arteaga
+05.04	Saltillo	05	Coahuila de Zaragoza	05027	Ramos Arizpe
+05.04	Saltillo	05	Coahuila de Zaragoza	05030	Saltillo
+06.01	Colima-Villa de álvarez	06	Colima	06002	Colima
+06.01	Colima-Villa de álvarez	06	Colima	06003	Comala
+06.01	Colima-Villa de álvarez	06	Colima	06004	Coquimatlán
+06.01	Colima-Villa de álvarez	06	Colima	06005	Cuauhtémoc
+06.01	Colima-Villa de álvarez	06	Colima	06010	Villa de álvarez
+06.02	Tecomán	06	Colima	06001	Armería
+06.02	Tecomán	06	Colima	06009	Tecomán
+07.01	Tapachula	07	Chiapas	07089	Tapachula
+07.02	Tuxtla Gutiérrez	07	Chiapas	07012	Berriozábal
+07.02	Tuxtla Gutiérrez	07	Chiapas	07027	Chiapa de Corzo
+07.02	Tuxtla Gutiérrez	07	Chiapas	07079	San Fernando
+07.02	Tuxtla Gutiérrez	07	Chiapas	07086	Suchiapa
+07.02	Tuxtla Gutiérrez	07	Chiapas	07101	Tuxtla Gutiérrez
+08.01	Chihuahua	08	Chihuahua	08002	Aldama
+08.01	Chihuahua	08	Chihuahua	08004	Aquiles Serdán
+08.01	Chihuahua	08	Chihuahua	08019	Chihuahua
+08.02	Delicias	08	Chihuahua	08021	Delicias
+08.02	Delicias	08	Chihuahua	08045	Meoqui
+08.03	Hidalgo del Parral	08	Chihuahua	08032	Hidalgo del Parral
+08.03	Hidalgo del Parral	08	Chihuahua	08059	San Francisco del Oro
+08.04	Juárez	08	Chihuahua	08037	Juárez
+09.01	Valle de México	09	Ciudad de México	09002	Azcapotzalco
+09.01	Valle de México	09	Ciudad de México	09003	Coyoacán
+09.01	Valle de México	09	Ciudad de México	09004	Cuajimalpa de Morelos
+09.01	Valle de México	09	Ciudad de México	09005	Gustavo A. Madero
+09.01	Valle de México	09	Ciudad de México	09006	Iztacalco
+09.01	Valle de México	09	Ciudad de México	09007	Iztapalapa
+09.01	Valle de México	09	Ciudad de México	09008	La Magdalena Contreras
+09.01	Valle de México	09	Ciudad de México	09009	Milpa Alta
+09.01	Valle de México	09	Ciudad de México	09010	álvaro Obregón
+09.01	Valle de México	09	Ciudad de México	09011	Tláhuac
+09.01	Valle de México	09	Ciudad de México	09012	Tlalpan
+09.01	Valle de México	09	Ciudad de México	09013	Xochimilco
+09.01	Valle de México	09	Ciudad de México	09014	Benito Juárez
+09.01	Valle de México	09	Ciudad de México	09015	Cuauhtémoc
+09.01	Valle de México	09	Ciudad de México	09016	Miguel Hidalgo
+09.01	Valle de México	09	Ciudad de México	09017	Venustiano Carranza
+09.01	Valle de México	13	Hidalgo	13069	Tizayuca
+09.01	Valle de México	15	México	15002	Acolman
+09.01	Valle de México	15	México	15009	Amecameca
+09.01	Valle de México	15	México	15010	Apaxco
+09.01	Valle de México	15	México	15011	Atenco
+09.01	Valle de México	15	México	15013	Atizapán de Zaragoza
+09.01	Valle de México	15	México	15015	Atlautla
+09.01	Valle de México	15	México	15016	Axapusco
+09.01	Valle de México	15	México	15017	Ayapango
+09.01	Valle de México	15	México	15020	Coacalco de Berriozábal
+09.01	Valle de México	15	México	15022	Cocotitlán
+09.01	Valle de México	15	México	15023	Coyotepec
+09.01	Valle de México	15	México	15024	Cuautitlán
+09.01	Valle de México	15	México	15025	Chalco
+09.01	Valle de México	15	México	15028	Chiautla
+09.01	Valle de México	15	México	15029	Chicoloapan
+09.01	Valle de México	15	México	15030	Chiconcuac
+09.01	Valle de México	15	México	15031	Chimalhuacán
+09.01	Valle de México	15	México	15033	Ecatepec de Morelos
+09.01	Valle de México	15	México	15034	Ecatzingo
+09.01	Valle de México	15	México	15035	Huehuetoca
+09.01	Valle de México	15	México	15036	Hueypoxtla
+09.01	Valle de México	15	México	15037	Huixquilucan
+09.01	Valle de México	15	México	15038	Isidro Fabela
+09.01	Valle de México	15	México	15039	Ixtapaluca
+09.01	Valle de México	15	México	15044	Jaltenco
+09.01	Valle de México	15	México	15046	Jilotzingo
+09.01	Valle de México	15	México	15050	Juchitepec
+09.01	Valle de México	15	México	15053	Melchor Ocampo
+09.01	Valle de México	15	México	15057	Naucalpan de Juárez
+09.01	Valle de México	15	México	15058	Nezahualcóyotl
+09.01	Valle de México	15	México	15059	Nextlalpan
+09.01	Valle de México	15	México	15060	Nicolás Romero
+09.01	Valle de México	15	México	15061	Nopaltepec
+09.01	Valle de México	15	México	15065	Otumba
+09.01	Valle de México	15	México	15068	Ozumba
+09.01	Valle de México	15	México	15069	Papalotla
+09.01	Valle de México	15	México	15070	La Paz
+09.01	Valle de México	15	México	15075	San Martín de las Pirámides
+09.01	Valle de México	15	México	15081	Tecámac
+09.01	Valle de México	15	México	15083	Temamatla
+09.01	Valle de México	15	México	15084	Temascalapa
+09.01	Valle de México	15	México	15089	Tenango del Aire
+09.01	Valle de México	15	México	15091	Teoloyucan
+09.01	Valle de México	15	México	15092	Teotihuacán
+09.01	Valle de México	15	México	15093	Tepetlaoxtoc
+09.01	Valle de México	15	México	15094	Tepetlixpa
+09.01	Valle de México	15	México	15095	Tepotzotlán
+09.01	Valle de México	15	México	15096	Tequixquiac
+09.01	Valle de México	15	México	15099	Texcoco
+09.01	Valle de México	15	México	15100	Tezoyuca
+09.01	Valle de México	15	México	15103	Tlalmanalco
+09.01	Valle de México	15	México	15104	Tlalnepantla de Baz
+09.01	Valle de México	15	México	15108	Tultepec
+09.01	Valle de México	15	México	15109	Tultitlán
+09.01	Valle de México	15	México	15112	Villa del Carbón
+09.01	Valle de México	15	México	15120	Zumpango
+09.01	Valle de México	15	México	15121	Cuautitlán Izcalli
+09.01	Valle de México	15	México	15122	Valle de Chalco Solidaridad
+09.01	Valle de México	15	México	15125	Tonanitla
+10.01	Durango	10	Durango	10005	Durango
+11.01	Celaya	11	Guanajuato	11007	Celaya
+11.01	Celaya	11	Guanajuato	11009	Comonfort
+11.01	Celaya	11	Guanajuato	11011	Cortazar
+11.01	Celaya	11	Guanajuato	11044	Villagrán
+11.02	Guanajuato	11	Guanajuato	11015	Guanajuato
+11.03	León	11	Guanajuato	11020	León
+11.03	León	11	Guanajuato	11037	Silao de la Victoria
+11.04	Moroleón-Uriangato	11	Guanajuato	11021	Moroleón
+11.04	Moroleón-Uriangato	11	Guanajuato	11041	Uriangato
+11.05	San Francisco del Rincón	11	Guanajuato	11025	Purísima del Rincón
+11.05	San Francisco del Rincón	11	Guanajuato	11031	San Francisco del Rincón
+12.01	Acapulco	12	Guerrero	12001	Acapulco de Juárez
+12.01	Acapulco	12	Guerrero	12021	Coyuca de Benítez
+12.02	Chilpancingo	12	Guerrero	12029	Chilpancingo de los Bravo
+12.02	Chilpancingo	12	Guerrero	12075	Eduardo Neri
+13.01	Pachuca	13	Hidalgo	13022	Epazoyucan
+13.01	Pachuca	13	Hidalgo	13039	Mineral del Monte
+13.01	Pachuca	13	Hidalgo	13048	Pachuca de Soto
+13.01	Pachuca	13	Hidalgo	13051	Mineral de la Reforma
+13.01	Pachuca	13	Hidalgo	13052	San Agustín Tlaxiaca
+13.01	Pachuca	13	Hidalgo	13082	Zapotlán de Juárez
+13.01	Pachuca	13	Hidalgo	13083	Zempoala
+13.02	Tula	13	Hidalgo	13010	Atitalaquia
+13.02	Tula	13	Hidalgo	13013	Atotonilco de Tula
+13.02	Tula	13	Hidalgo	13070	Tlahuelilpan
+13.02	Tula	13	Hidalgo	13074	Tlaxcoapan
+13.02	Tula	13	Hidalgo	13076	Tula de Allende
+13.03	Tulancingo	13	Hidalgo	13016	Cuautepec de Hinojosa
+13.03	Tulancingo	13	Hidalgo	13056	Santiago Tulantepec de Lugo Guerrero
+13.03	Tulancingo	13	Hidalgo	13077	Tulancingo de Bravo
+14.01	Guadalajara	14	Jalisco	14002	Acatlán de Juárez
+14.01	Guadalajara	14	Jalisco	14039	Guadalajara
+14.01	Guadalajara	14	Jalisco	14044	Ixtlahuacán de los Membrillos
+14.01	Guadalajara	14	Jalisco	14051	Juanacatlán
+14.01	Guadalajara	14	Jalisco	14070	El Salto
+14.01	Guadalajara	14	Jalisco	14097	Tlajomulco de Zú±iga
+14.01	Guadalajara	14	Jalisco	14098	San Pedro Tlaquepaque
+14.01	Guadalajara	14	Jalisco	14101	Tonalá
+14.01	Guadalajara	14	Jalisco	14120	Zapopan
+14.01	Guadalajara	14	Jalisco	14124	Zapotlanejo
+14.02	Ocotlán	14	Jalisco	14047	Jamay
+14.02	Ocotlán	14	Jalisco	14063	Ocotlán
+14.02	Ocotlán	14	Jalisco	14066	Poncitlán
+14.03	Puerto Vallarta	14	Jalisco	14067	Puerto Vallarta
+14.03	Puerto Vallarta	18	Nayarit	18020	Bahía de Banderas
+15.01	Tianguistenco	15	México	15006	Almoloya del Río
+15.01	Tianguistenco	15	México	15012	Atizapán
+15.01	Tianguistenco	15	México	15019	Capulhuac
+15.01	Tianguistenco	15	México	15043	Xalatlaco
+15.01	Tianguistenco	15	México	15098	Texcalyacac
+15.01	Tianguistenco	15	México	15101	Tianguistenco
+15.02	Toluca	15	México	15005	Almoloya de Juárez
+15.02	Toluca	15	México	15018	Calimaya
+15.02	Toluca	15	México	15027	Chapultepec
+15.02	Toluca	15	México	15051	Lerma
+15.02	Toluca	15	México	15054	Metepec
+15.02	Toluca	15	México	15055	Mexicaltzingo
+15.02	Toluca	15	México	15062	Ocoyoacac
+15.02	Toluca	15	México	15067	Otzolotepec
+15.02	Toluca	15	México	15072	Rayón
+15.02	Toluca	15	México	15073	San Antonio la Isla
+15.02	Toluca	15	México	15076	San Mateo Atenco
+15.02	Toluca	15	México	15087	Temoaya
+15.02	Toluca	15	México	15090	Tenango del Valle
+15.02	Toluca	15	México	15106	Toluca
+15.02	Toluca	15	México	15115	Xonacatlán
+15.02	Toluca	15	México	15118	Zinacantepec
+16.01	La Piedad-Pénjamo	11	Guanajuato	11023	Pénjamo
+16.01	La Piedad-Pénjamo	16	Michoacán de Ocampo	16069	La Piedad
+16.02	Morelia	16	Michoacán de Ocampo	16022	Charo
+16.02	Morelia	16	Michoacán de Ocampo	16053	Morelia
+16.02	Morelia	16	Michoacán de Ocampo	16088	Tarímbaro
+16.03	Zamora	16	Michoacán de Ocampo	16043	Jacona
+16.03	Zamora	16	Michoacán de Ocampo	16108	Zamora
+17.01	Cuautla	17	Morelos	17002	Atlatlahucan
+17.01	Cuautla	17	Morelos	17004	Ayala
+17.01	Cuautla	17	Morelos	17006	Cuautla
+17.01	Cuautla	17	Morelos	17026	Tlayacapan
+17.01	Cuautla	17	Morelos	17029	Yautepec
+17.01	Cuautla	17	Morelos	17030	Yecapixtla
+17.02	Cuernavaca	17	Morelos	17007	Cuernavaca
+17.02	Cuernavaca	17	Morelos	17008	Emiliano Zapata
+17.02	Cuernavaca	17	Morelos	17009	Huitzilac
+17.02	Cuernavaca	17	Morelos	17011	Jiutepec
+17.02	Cuernavaca	17	Morelos	17018	Temixco
+17.02	Cuernavaca	17	Morelos	17020	Tepoztlán
+17.02	Cuernavaca	17	Morelos	17024	Tlaltizapán de Zapata
+17.02	Cuernavaca	17	Morelos	17028	Xochitepec
+18.01	Tepic	18	Nayarit	18008	Xalisco
+18.01	Tepic	18	Nayarit	18017	Tepic
+19.01	Monterrey	19	Nuevo León	19001	Abasolo
+19.01	Monterrey	19	Nuevo León	19006	Apodaca
+19.01	Monterrey	19	Nuevo León	19009	Cadereyta Jiménez
+19.01	Monterrey	19	Nuevo León	19010	El Carmen
+19.01	Monterrey	19	Nuevo León	19012	Ciénega de Flores
+19.01	Monterrey	19	Nuevo León	19018	García
+19.01	Monterrey	19	Nuevo León	19019	San Pedro Garza García
+19.01	Monterrey	19	Nuevo León	19021	General Escobedo
+19.01	Monterrey	19	Nuevo León	19025	General Zuazua
+19.01	Monterrey	19	Nuevo León	19026	Guadalupe
+19.01	Monterrey	19	Nuevo León	19031	Juárez
+19.01	Monterrey	19	Nuevo León	19039	Monterrey
+19.01	Monterrey	19	Nuevo León	19041	Pesquería
+19.01	Monterrey	19	Nuevo León	19045	Salinas Victoria
+19.01	Monterrey	19	Nuevo León	19046	San Nicolás de los Garza
+19.01	Monterrey	19	Nuevo León	19047	Hidalgo
+19.01	Monterrey	19	Nuevo León	19048	Santa Catarina
+19.01	Monterrey	19	Nuevo León	19049	Santiago
+20.01	Oaxaca	20	Oaxaca	20045	Magdalena Apasco
+20.01	Oaxaca	20	Oaxaca	20063	Nazareno Etla
+20.01	Oaxaca	20	Oaxaca	20067	Oaxaca de Juárez
+20.01	Oaxaca	20	Oaxaca	20083	San Agustín de las Juntas
+20.01	Oaxaca	20	Oaxaca	20087	San Agustín Yatareni
+20.01	Oaxaca	20	Oaxaca	20091	San Andrés Huayápam
+20.01	Oaxaca	20	Oaxaca	20107	San Antonio de la Cal
+20.01	Oaxaca	20	Oaxaca	20115	San Bartolo Coyotepec
+20.01	Oaxaca	20	Oaxaca	20157	San Jacinto Amilpas
+20.01	Oaxaca	20	Oaxaca	20174	ánimas Trujano
+20.01	Oaxaca	20	Oaxaca	20227	San Lorenzo Cacaotepec
+20.01	Oaxaca	20	Oaxaca	20293	San Pablo Etla
+20.01	Oaxaca	20	Oaxaca	20338	Villa de Etla
+20.01	Oaxaca	20	Oaxaca	20350	San Sebastián Tutla
+20.01	Oaxaca	20	Oaxaca	20375	Santa Cruz Amilpas
+20.01	Oaxaca	20	Oaxaca	20385	Santa Cruz Xoxocotlán
+20.01	Oaxaca	20	Oaxaca	20390	Santa Lucía del Camino
+20.01	Oaxaca	20	Oaxaca	20399	Santa María Atzompa
+20.01	Oaxaca	20	Oaxaca	20403	Santa María Coyotepec
+20.01	Oaxaca	20	Oaxaca	20409	Santa María del Tule
+20.01	Oaxaca	20	Oaxaca	20519	Santo Domingo Tomaltepec
+20.01	Oaxaca	20	Oaxaca	20539	Soledad Etla
+20.01	Oaxaca	20	Oaxaca	20553	Tlalixtac de Cabrera
+20.01	Oaxaca	20	Oaxaca	20565	Villa de Zaachila
+20.02	Tehuantepec	20	Oaxaca	20079	Salina Cruz
+20.02	Tehuantepec	20	Oaxaca	20124	San Blas Atempa
+20.02	Tehuantepec	20	Oaxaca	20308	San Pedro Huilotepec
+20.02	Tehuantepec	20	Oaxaca	20421	Santa María Mixtequilla
+20.02	Tehuantepec	20	Oaxaca	20515	Santo Domingo Tehuantepec
+21.01	Puebla-Tlaxcala	21	Puebla	21001	Acajete
+21.01	Puebla-Tlaxcala	21	Puebla	21015	Amozoc
+21.01	Puebla-Tlaxcala	21	Puebla	21034	Coronango
+21.01	Puebla-Tlaxcala	21	Puebla	21041	Cuautlancingo
+21.01	Puebla-Tlaxcala	21	Puebla	21048	Chiautzingo
+21.01	Puebla-Tlaxcala	21	Puebla	21060	Domingo Arenas
+21.01	Puebla-Tlaxcala	21	Puebla	21074	Huejotzingo
+21.01	Puebla-Tlaxcala	21	Puebla	21090	Juan C. Bonilla
+21.01	Puebla-Tlaxcala	21	Puebla	21106	Ocoyucan
+21.01	Puebla-Tlaxcala	21	Puebla	21114	Puebla
+21.01	Puebla-Tlaxcala	21	Puebla	21119	San Andrés Cholula
+21.01	Puebla-Tlaxcala	21	Puebla	21122	San Felipe Teotlalcingo
+21.01	Puebla-Tlaxcala	21	Puebla	21125	San Gregorio Atzompa
+21.01	Puebla-Tlaxcala	21	Puebla	21132	San Martín Texmelucan
+21.01	Puebla-Tlaxcala	21	Puebla	21136	San Miguel Xoxtla
+21.01	Puebla-Tlaxcala	21	Puebla	21140	San Pedro Cholula
+21.01	Puebla-Tlaxcala	21	Puebla	21143	San Salvador el Verde
+21.01	Puebla-Tlaxcala	21	Puebla	21163	Tepatlaxco de Hidalgo
+21.01	Puebla-Tlaxcala	21	Puebla	21181	Tlaltenango
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29015	Ixtacuixtla de Mariano Matamoros
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29017	Mazatecochco de José María Morelos
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29019	Tepetitla de Lardizábal
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29022	Acuamanala de Miguel Hidalgo
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29023	Natívitas
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29025	San Pablo del Monte
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29027	Tenancingo
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29028	Teolocholco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29029	Tepeyanco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29032	Tetlatlahuca
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29041	Papalotla de Xicohténcatl
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29042	Xicohtzinco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29044	Zacatelco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29051	San Jerónimo Zacualpan
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29053	San Juan Huactzinco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29054	San Lorenzo Axocomanitla
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29056	Santa Ana Nopalucan
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29057	Santa Apolonia Teacalco
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29058	Santa Catarina Ayometla
+21.01	Puebla-Tlaxcala	29	Tlaxcala	29059	Santa Cruz Quilehtla
+21.02	Tehuacán	21	Puebla	21149	Santiago Miahuatlán
+21.02	Tehuacán	21	Puebla	21156	Tehuacán
+21.03	Teziutlán	21	Puebla	21054	Chignautla
+21.03	Teziutlán	21	Puebla	21174	Teziutlán
+22.01	Querétaro	11	Guanajuato	11004	Apaseo el Alto
+22.01	Querétaro	22	Querétaro	22006	Corregidora
+22.01	Querétaro	22	Querétaro	22008	Huimilpan
+22.01	Querétaro	22	Querétaro	22011	El Marqués
+22.01	Querétaro	22	Querétaro	22014	Querétaro
+23.01	Cancún	23	Quintana Roo	23003	Isla Mujeres
+23.01	Cancún	23	Quintana Roo	23005	Benito Juárez
+23.02	Chetumal	23	Quintana Roo	23004	Othón P. Blanco
+24.01	Rioverde	24	San Luis Potosí	24011	Ciudad Fernández
+24.01	Rioverde	24	San Luis Potosí	24024	Rioverde
+24.02	San Luis Potosí	24	San Luis Potosí	24028	San Luis Potosí
+24.02	San Luis Potosí	24	San Luis Potosí	24035	Soledad de Graciano Sánchez
+24.02	San Luis Potosí	24	San Luis Potosí	24055	Zaragoza
+25.01	Culiacán	25	Sinaloa	25006	Culiacán
+25.02	Mazatlán	25	Sinaloa	25012	Mazatlán
+26.01	Guaymas	26	Sonora	26025	Empalme
+26.01	Guaymas	26	Sonora	26029	Guaymas
+26.02	Hermosillo	26	Sonora	26030	Hermosillo
+26.03	Nogales	26	Sonora	26043	Nogales
+27.01	Villahermosa	27	Tabasco	27004	Centro
+27.01	Villahermosa	27	Tabasco	27013	Nacajuca
+28.01	Ciudad Victoria	28	Tamaulipas	28041	Victoria
+28.02	Matamoros	28	Tamaulipas	28022	Matamoros
+28.03	Nuevo Laredo	28	Tamaulipas	28027	Nuevo Laredo
+28.04	Reynosa	28	Tamaulipas	28032	Reynosa
+28.04	Reynosa	28	Tamaulipas	28033	Río Bravo
+28.05	Tampico	28	Tamaulipas	28003	Altamira
+28.05	Tampico	28	Tamaulipas	28009	Ciudad Madero
+28.05	Tampico	28	Tamaulipas	28038	Tampico
+28.05	Tampico	28	Tamaulipas	30123	Pánuco
+28.05	Tampico	28	Tamaulipas	30133	Pueblo Viejo
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29001	Amaxac de Guerrero
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29002	Apetatitlán de Antonio Carvajal
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29005	Apizaco
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29009	Cuaxomulco
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29010	Chiautempan
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29018	Contla de Juan Cuamatzi
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29024	Panotla
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29026	Santa Cruz Tlaxcala
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29031	Tetla de la Solidaridad
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29033	Tlaxcala
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29035	Tocatlán
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29036	Totolac
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29038	Tzompantepec
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29039	Xaloztoc
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29043	Yauhquemehcan
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29048	La Magdalena Tlaltelulco
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29049	San Damián Texóloc
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29050	San Francisco Tetlanohcan
+29.01	Tlaxcala-Apizaco	29	Tlaxcala	29060	Santa Isabel Xiloxoxtla
+30.01	Acayucan	30	Veracruz de Ignacio de la Llave	30003	Acayucan
+30.01	Acayucan	30	Veracruz de Ignacio de la Llave	30116	Oluta
+30.01	Acayucan	30	Veracruz de Ignacio de la Llave	30145	Soconusco
+30.02	Coatzacoalcos	30	Veracruz de Ignacio de la Llave	30039	Coatzacoalcos
+30.02	Coatzacoalcos	30	Veracruz de Ignacio de la Llave	30082	Ixhuatlán del Sureste
+30.02	Coatzacoalcos	30	Veracruz de Ignacio de la Llave	30206	Nanchital de Lázaro Cárdenas del Río
+30.03	Córdoba	30	Veracruz de Ignacio de la Llave	30014	Amatlán de los Reyes
+30.03	Córdoba	30	Veracruz de Ignacio de la Llave	30044	Córdoba
+30.03	Córdoba	30	Veracruz de Ignacio de la Llave	30068	Fortín
+30.03	Córdoba	30	Veracruz de Ignacio de la Llave	30196	Yanga
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30048	Cosoleacaque
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30059	Chinameca
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30089	Jáltipan
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30108	Minatitlán
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30120	Oteapan
+30.04	Minatitlán	30	Veracruz de Ignacio de la Llave	30199	Zaragoza
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30022	Atzacan
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30030	Camerino Z. Mendoza
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30074	Huiloapan de Cuauhtémoc
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30081	Ixhuatlancillo
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30085	Ixtaczoquitlán
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30099	Maltrata
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30101	Mariano Escobedo
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30115	Nogales
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30118	Orizaba
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30135	Rafael Delgado
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30138	Río Blanco
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30140	San Andrés Tenejapan
+30.05	Orizaba	30	Veracruz de Ignacio de la Llave	30185	Tlilapan
+30.06	Poza Rica	30	Veracruz de Ignacio de la Llave	30033	Cazones de Herrera
+30.06	Poza Rica	30	Veracruz de Ignacio de la Llave	30040	Coatzintla
+30.06	Poza Rica	30	Veracruz de Ignacio de la Llave	30124	Papantla
+30.06	Poza Rica	30	Veracruz de Ignacio de la Llave	30131	Poza Rica de Hidalgo
+30.06	Poza Rica	30	Veracruz de Ignacio de la Llave	30175	Tihuatlán
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30011	Alvarado
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30028	Boca del Río
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30090	Jamapa
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30100	Manlio Fabio Altamirano
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30105	Medellín de Bravo
+30.07	Veracruz	30	Veracruz de Ignacio de la Llave	30193	Veracruz
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30026	Banderilla
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30036	Coacoatzintla
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30038	Coatepec
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30065	Emiliano Zapata
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30087	Xalapa
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30092	Xico
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30093	Jilotepec
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30136	Rafael Lucio
+30.08	Xalapa	30	Veracruz de Ignacio de la Llave	30182	Tlalnelhuayocan
+31.01	Mérida	31	Yucatán	31002	Acanceh
+31.01	Mérida	31	Yucatán	31013	Conkal
+31.01	Mérida	31	Yucatán	31038	Hunucmá
+31.01	Mérida	31	Yucatán	31041	Kanasín
+31.01	Mérida	31	Yucatán	31050	Mérida
+31.01	Mérida	31	Yucatán	31063	Samahil
+31.01	Mérida	31	Yucatán	31090	Timucuy
+31.01	Mérida	31	Yucatán	31093	Tixkokob
+31.01	Mérida	31	Yucatán	31095	Tixpéhual
+31.01	Mérida	31	Yucatán	31100	Ucú
+31.01	Mérida	31	Yucatán	31101	Umán
+32.01	Zacatecas-Guadalupe	32	Zacatecas	32017	Guadalupe
+32.01	Zacatecas-Guadalupe	32	Zacatecas	32032	Morelos
+32.01	Zacatecas-Guadalupe	32	Zacatecas	32050	Vetagrande
+32.01	Zacatecas-Guadalupe	32	Zacatecas	32056	Zacatecas
+32.01	Zacatecas-Guadalupe	32	Zacatecas	32057	Trancoso
