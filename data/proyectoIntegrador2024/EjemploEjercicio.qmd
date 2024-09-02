@@ -1,0 +1,149 @@
+---
+title: "Ejercicio final: Juegos Olímpicos"
+format: pdf
+editor: visual
+---
+
+En este ejercicio vamos a trabajar con los datos de resultados de Juegos olímpicos (hasta 2016), obtenidos de:
+
+<https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-08-06/readme.md>
+
+## 1) Leer datos: 
+
+Los datos se leen directamente de esta liga
+
+[https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'](https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+```
+
+Obteniendo el siguiente dataset:
+
+```{r}
+print(olympics)
+```
+
+## 2) Explorar los juegos de verano
+
+Solo queremos trabajar con resultados de juegos de verano (Summer)
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+verano <- 
+  olympics |> 
+  dplyr::filter(season=="Summer")
+
+print(verano)
+
+```
+
+### ¿Qué países han ganado más medallas?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+ganadores <-
+  verano |> 
+  filter(!is.na(medal)) |> 
+  group_by(team, medal) |> 
+  tally(sort = T) 
+
+medallas_totales <- 
+  ganadores |> 
+  group_by(team) |> 
+  summarize(total_medallas = sum(n)) |> 
+  arrange(desc(total_medallas)) 
+
+top_medallistas <- 
+  medallas_totales |> 
+  pull(team) |> 
+  head(10)
+
+
+#graficar los diez paises mas medallistas
+ganadores |> 
+  filter(team%in%top_medallistas) |> 
+  ggplot() + 
+  aes(y = team, x = n, fill=medal) + 
+  geom_bar(stat="identity", position="dodge")
+
+  
+
+```
+
+Pueden hacerlo mejor: colores de oro, plata y bronce para las barras. Ejes en su idioma. Los países y medallas ordenados de mayor a menor....
+
+## ¿Cómo ha sido la participación de mi país en los juegos de verano?
+
+En mi caso, México...
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+mx <- 
+  verano |> 
+  filter(noc=="MEX")
+
+mx.tally <- 
+  mx |> 
+  group_by(year, medal) |> 
+  tally() |> 
+  mutate(participantes_totales = sum(n))
+
+mx.tally |> 
+  ggplot() + 
+  aes(x = year, y = participantes_totales) + 
+  geom_line(group=1) + 
+  geom_point() + 
+  ggtitle("participantes de México")
+
+#medallas totales |> 
+
+mx.medal <- 
+  mx |> 
+  filter(!is.na(medal)) |> 
+  group_by(year, medal) |> 
+  tally() 
+  
+mx.medal |> 
+  ggplot() + 
+  aes(x = year, y = n, color = medal) + 
+  geom_line() + 
+  geom_point() + 
+  ggtitle("medallas de México")
+
+
+
+
+
+```
+
+Aquí veo cuántos participantes ha enviado mi país a los juegos, y cuántas medallas han ganado. ¿Pueden hacer más bonitas las gráficas?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+mx |> 
+  filter(!is.na(medal)) |> 
+  select(name,sport, medal, year) |> 
+  ggplot()  + 
+  aes(y = sport, x = year, fill = medal) + 
+  geom_tile()
+```
+
+Y por último, veo qué medallas ganó mi país en cada juego, por deporte....
